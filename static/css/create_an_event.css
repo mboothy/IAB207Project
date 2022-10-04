@@ -1,0 +1,493 @@
+body {
+    background-color: #121819;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 1400px;
+}
+:root{
+    --piriblue: #00beed;
+}
+#profileiconnavbar{
+    height: 40px;
+}
+.container{
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%;
+
+}
+.container-fluid{
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 1400px;
+}
+*{
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+.nav-link{
+    align-items: center;
+    width: 10vw;
+    margin-left: 0.1vw;
+    margin-right: 0.1vw;
+    text-align: center;
+    font-weight: 400;
+    color: #eaeaea;
+    text-transform: uppercase;
+    align-content: center;
+    letter-spacing: 0.05em;
+    font-size: normal;
+    font-size: 0.8vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 !important;
+
+
+}
+@media  screen and (min-width:600px ) and (max-width:1100px ){
+    .nav-link{
+        align-items: center;
+        width: 10vw;
+        text-align: center;
+        font-weight: 400;
+        text-transform: uppercase;
+        align-content: center;
+        letter-spacing: 0.02em;
+        font-size: normal;
+        font-size: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700 !important;
+        padding-left: 0%;
+    }
+    .navbarbutton{ 
+        display: inline;
+        align-items: center;
+        width: 20%;
+        border-radius: 60px;
+        padding: 0,0,0,0;
+        margin-left: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .nav-item{
+        align-self: center; 
+        margin-right: 0%;
+        margin-left: 0%;
+        padding: 0,0,0,0;
+
+    }
+    
+}
+
+.navbar-calender{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.nav-item{
+   align-self: center; 
+   margin-right: 0%;
+}
+.nav-link:hover{
+    color: #17304d;
+} 
+.navbarbutton{ 
+    align-items: center;
+    width: 10%;
+    border-radius: 60px;
+}
+
+.navbarbutton:hover {
+    box-shadow:  10 8px 6px rgb(34, 60, 80, 0.16);
+}
+.navbar-brand{
+    margin-left: 0%;
+    margin-left: 10px;
+}
+.navbar{
+    padding-top: 10px;
+    background-image: linear-gradient(to top,rgba(0,0,0,0) , rgba(0,0,0,1));
+    margin-bottom: 0%;
+    margin-right: 0%;
+    margin-left: 0%;
+    width: 100%;
+
+}
+.homepagenavbar{
+    margin: 0,0,0,0;
+    list-style: none;
+    width: 100%;
+}
+.collapse{
+    margin-right: 0%;
+}
+.navbar-nav{
+    margin-right: 0%;
+}
+.dropdown-menu{
+    margin-right: 0%;
+}
+.search{
+    align-self: center;
+    height: 2vw;
+    width: 12vw;
+    border: 60px;
+    border-radius: 60px;
+    outline: none;
+    font-size: 1vw;
+    border: 2px solid #00beed;
+    margin-right: -4vw;   
+}
+.btn0{
+    text-align: center;
+    align-self: center;
+    height: 2vw;
+    width: 5vw;
+    outline: none;
+    border: none;
+    border: 2px solid #00beed;
+    background: #00beed;
+    color: white;
+    border-radius: 60px;
+    font-size: 1vw;
+    font-weight: 600;
+    margin-right: 0.2vw;
+}
+.banner{
+    width: 100%;
+    min-height: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+.slider{
+    width: 100%;
+    background: url("../imgs/carousel images/club.jpg") repeat center;
+    background-size: cover;
+    height: 2000px;
+    position: absolute;
+}
+
+.website-background{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+.burgermenu{
+    background: #00beed;
+    color: white;
+}
+.logo-img{ 
+    width: clamp(200px,20vw,250px);
+    height: auto;
+    margin-left: 10px;
+    margin-right: clamp(10px,4vw,100px);
+    aspect-ratio: 16/4;
+}
+@media only screen and (min-width: 770px) and (max-width: 1100px){
+    .logo-img{ 
+        width: clamp(150px,20vw,200px);
+        height: auto;
+        margin-left: 10px;
+        margin-right: 1vw;
+        aspect-ratio: 16/4;
+    }
+}
+@media only screen and (max-width: 770px){
+    .logo-img{ 
+        width: clamp(200px,40vw,500px);
+        height: auto;
+        aspect-ratio: 16/4;
+    }
+}
+.mainsection{
+    margin-top: 10px;
+    background-color: #1c2224;
+    width: clamp(100px,90vw,1200px);
+    height: auto;
+    padding-bottom: 10px;
+    margin: auto;
+    margin-top: 0px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid white;
+}
+.titlecontainer{
+    background-color: #121819;
+    width: clamp(320px,90vw,1200px);
+    height: clamp(60px,15vw,90px);
+    margin: auto;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: clamp(5px,1vw,10px);
+}
+.heading{
+    justify-content: center;
+    color: #00beed;
+    align-self: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 !important;
+}
+.line{
+    background-color: white;
+    height: 2px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sectionbody{
+    width: auto;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.left_column{
+    padding-right: 20px;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 150px;
+}
+.middle_column{
+    padding: 0px 10px 10px 0px;
+    order: 2;
+    flex: 1 1 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.middle_column h2{
+    text-decoration: underline;
+    letter-spacing: 0.2rem;
+    color: var(--piriblue);
+    font-size: 20px;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 !important;
+    padding-bottom: 10px;
+}
+.eventdescription{
+    min-height: 600px;
+    background-color: white;
+    padding: 0 0px 0 10px;
+    color: black;
+    font-size: clamp(10px,1vw,20px);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.right_column{
+    order: 3;
+    flex: 1 1 200px;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ticketsdiv{
+    width: 100%;
+    display: inline-flex;
+}
+.dateandtime h1{
+    padding-top: 10px;
+    font-size: 15px;
+    color: var(--piriblue);
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    grid-area: 1 / 1 / span 1 / span 2;
+    margin-bottom: 10px;
+}
+.dateandtime{
+    width: 100%;
+    align-self: flex-start;
+    padding: 0 0px 0 0px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 15px;
+
+}
+#event_starts{
+    grid-area: 2/1 / span 1 / span 1;
+}
+#event_ends{
+    grid-area: 3 / 1 / span 1 / span 1;
+}
+#start_time{
+    grid-area: 2/2/ span 1 / span 1;
+}
+#end_time{
+    grid-area: 3/2/ span 1 / span 1;
+}
+#floatingInput{
+    font-size: clamp(2px,0.8vw 10px);
+}
+.form-label{
+    font-size: 20px;
+    color: var(--piriblue);
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    
+}
+#locationdiv{
+    padding-top: 10px;
+    width: 100%;
+    align-self: flex-start;
+}
+.ticketsdiv{
+    display: grid;
+    padding: 10px 0px 10px 0px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 15px;
+}
+.ticketsdiv h3{
+    font-size: 20px;
+    color: var(--piriblue);
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    grid-area: 1/1 / span 1 / span 2;
+}
+.form-label2{
+    font-size: 10px;
+    color: white;
+    text-decoration: underline;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+#how_many-tickets{
+    grid-area: 2/1 / span 1/ span 1;
+}
+#ticket_price{
+    grid-area: 2/2 / span 1/ span 1;
+}
+.categorydiv {
+    align-self: center;
+    padding-left: 15px;
+}
+.categorydiv h1{
+    margin-top: 40px;
+    font-size: clamp(15px ,2vw, 30px);
+    color: var(--piriblue);
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 !important;
+    margin-bottom: 10px;
+}
+.nameevent{
+    width: 100%;
+    align-self: flex-start;
+    padding: 10px 0px 10px 0px;
+}
+.right_column h1{
+    font-size: clamp(15px ,2vw, 20px);
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+}
+.photosdiv{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto ;
+    justify-content: space-between;
+}
+.special_photo{
+    grid-area: 1/1/ span 2/ span 1;
+    padding: 10px;
+    background-color: #262c2e;
+}
+.special_photo h2{
+    font-size: clamp(10px ,1.5vw, 30px);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.importimgs{
+    aspect-ratio: 16/9;
+    width: auto;
+    height: 70px;
+}
+#exampleFormControlTextarea1{
+    width: 100%;
+}
+#locationinput{
+    width: 100%;
+}
+#enternameinput{
+    width: 100%;
+}
+
+@media  screen and (max-width:600px){
+    .left_column{
+        padding-right: 0%;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 150px;
+    }
+}
+@media  screen and (min-width:480px) and (max-width:600px){
+    .middle_column{
+        padding: 0px 0px 10px 0px;
+        order: 2;
+        flex: 1 1 100px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .left_column{
+        padding-right: 10px;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 150px;
+    }
+}
+@media  screen and (max-width:480px){
+    .photosdiv{
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto auto auto ;
+        justify-content: space-between;
+    }
+    .middle_column{
+        padding: 0% 5px 0px 0px;
+        order: 2;
+        flex: 1 1 100px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        justify-content: center;
+    }
+}
