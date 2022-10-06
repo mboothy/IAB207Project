@@ -1,39 +1,48 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PLus One</title>
-    <link href="//db.onlinewebfonts.com/c/69dbc1186412d7831b88d8a78a360360?family=DIN+Condensed+Web" rel="stylesheet" type="text/css"/> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="//db.onlinewebfonts.com/c/69dbc1186412d7831b88d8a78a360360?family=DIN+Condensed+Web" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/stylehome.css">
     <!-- fav-icon -->
     <link rel="shortcut icon" href="../static/imgs/favcon2.png">
 </head>
 </head>
+
 <body>
     <!-- whole container around the whole website -->
     <div class="container-fluid bg-black">
         <!-- background img -->
         <div class="banner">
-            <video src="https://player.vimeo.com/progressive_redirect/playback/727922541/rendition/1080p/file.mp4?loc=external&amp;signature=cbfc2ec884c2abea8922dbc94e0821a1683b460e02d30925c5b3361882c1d2b3" autoplay="" loop="" muted="" playsinline=""></video>
+            <video
+                src="https://player.vimeo.com/progressive_redirect/playback/727922541/rendition/1080p/file.mp4?loc=external&amp;signature=cbfc2ec884c2abea8922dbc94e0821a1683b460e02d30925c5b3361882c1d2b3"
+                autoplay="" loop="" muted="" playsinline=""></video>
             <div class="overlay">
-        <!-- start of navbar -->
+                <!-- start of navbar -->
                 <header>
                     <nav class="navbar navbar-expand-md me-auto mb-2 mb-ms-0 navbar-white" id="homepagenavbar">
-                        <div class="container"> 
+                        <div class="container">
                             <a class="navbar-brand" href="../templates/index.html">
-                                <img class="logo-img" src="../static/imgs/logo9.png" href=""alt="">
+                                <img class="logo-img" src="../static/imgs/logo9.png" href="" alt="">
                             </a>
-                            <button class="navbar-toggler burgermenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler burgermenu" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mb-lg">
                                     <!-- search box  -->
                                     <form class="d-flex" role="search">
-                                        <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+                                        <input class="px-2 search" type="search" placeholder="Search"
+                                            aria-label="Search">
                                         <button class="btn0" type="submit">Search</button>
                                     </form>
                                     <!-- main navbar items -->
@@ -52,19 +61,42 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contact-us">Contact us</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="../static/imgs/profile3.png"  id="profileicon">
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Dashboard</a>
-                                            <a class="dropdown-item" href="#">Edit Profile</a>
-                                            <a class="dropdown-item" href="#">Log Out</a>
+                                    <img src="../static/imgs/profileimgs/c-2.jpg" id="profileicon"
+                                        onclick="toggleMenu()">
+
+                                    <div class="sub-menu-wrap" id="subMenu">
+                                        <div class="sub-menu">
+                                            <div class="user-info">
+                                                <img src="../static/imgs/profileimgs/c-2.jpg">
+                                                <h1>piri cavanagh</h1>
+                                            </div>
+                                            <hr>
+                                            <a href="#" class="sub-menu-link">
+                                                <img src="../static/imgs/profileimgs/setting.png" alt="">
+                                                <p>Edit Profile</p>
+                                                <span>></span>
+                                            </a>
+                                            <a href="#" class="sub-menu-link">
+                                                <img src="../static/imgs/profileimgs/signup.png" alt="">
+                                                <p>Sign UP</p>
+                                                <span>></span>
+                                            </a>
+                                            <a href="#" class="sub-menu-link">
+                                                <img src="../static/imgs/profileimgs/login.png" alt="">
+                                                <p>Login</p>
+                                                <span>></span>
+                                            </a>
+                                            <a href="#" class="sub-menu-link">
+                                                <img src="../static/imgs/profileimgs/logout.png" alt="">
+                                                <p>Logout</p>
+                                                <span>></span>
+                                            </a>
+
                                         </div>
-                                    </li> 
+                                    </div>
                                 </ul>
                             </div>
-                        </div>  
+                        </div>
                     </nav>
                 </header>
                 <div class="title-box">
@@ -77,7 +109,7 @@
                         <li style="display:inline">CONCERTS</li>
                         <li style="display:inline">DJ GIGS</li>
                         <li style="display:inline">BAR EVENTS</li>
-                    </ul>           
+                    </ul>
                 </div>
             </div>
         </div>
@@ -88,8 +120,8 @@
                 <h1 href="#This week">This week</h1>
                 <h1 href="#This month">This month</h1>
                 <h1 href="#This year">This year</a>
-            </div> 
-            <hr class="calender-line" width="90%" /> 
+            </div>
+            <hr class="calender-line" width="90%" />
         </div>
     </div>
     <!-- main body section -->
@@ -221,11 +253,12 @@
                 <div class="row gy-3 gx-3">
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                         <div class="cardcontainer">
-                            <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top"  alt="...">
+                            <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top" alt="...">
                             <div class="cardbody">
                                 <h6 class="date">22 July 2022 – 24 July 2022</h6>
                                 <h5 class="card-title">Splendour in the grass</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
                                 <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus">Upcoming</h7>
@@ -237,8 +270,9 @@
                             <div class="cardbody">
                                 <h6 class="date">24 Mar – 26 Mar 2023</h6>
                                 <h5 class="card-title">Ultra Miami 2022</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a> 
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus" id="closed">Inactive</h7>
                         </div>
@@ -249,7 +283,8 @@
                             <div class="cardbody">
                                 <h6 class="date">4 Aug – 7 Aug 2022</h6>
                                 <h5 class="card-title">Untold 2022</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
                                 <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus" id="closed">Booked</h7>
@@ -261,7 +296,8 @@
                             <div class="cardbody">
                                 <h6 class="date">15 July – 31 July 2022</h6>
                                 <h5 class="card-title">Tommorland 2022</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
                                 <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus" id="closed">Cancelled</h7>
@@ -271,10 +307,11 @@
                         <div class="cardcontainer">
                             <img src="../static/imgs/events/kickons2.jpeg" class="card-img-top" alt="...">
                             <div class="cardbody">
-                              <h6 class="date">12/09/2022</h6>
-                              <h5 class="card-title">Kick ons Club</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                                <h6 class="date">12/09/2022</h6>
+                                <h5 class="card-title">Kick ons Club</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus">Upcoming</h7>
                         </div>
@@ -283,10 +320,11 @@
                         <div class="cardcontainer">
                             <img src="../static/imgs/events/omnia.jpg" class="card-img-top" alt="...">
                             <div class="cardbody">
-                              <h6 class="date">23/09/2022</h6>
-                              <h5 class="card-title">Omnia Las Vegas</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                                <h6 class="date">23/09/2022</h6>
+                                <h5 class="card-title">Omnia Las Vegas</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus">Upcoming</h7>
                         </div>
@@ -295,10 +333,11 @@
                         <div class="cardcontainer">
                             <img src="../static/imgs/events/prohabition.png" class="card-img-top" alt="...">
                             <div class="cardbody">
-                              <h6 class="date">30/09/2022</h6>
-                              <h5 class="card-title">Prohabition Club</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                                <h6 class="date">30/09/2022</h6>
+                                <h5 class="card-title">Prohabition Club</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus" id="closed">Booked</h7>
                         </div>
@@ -307,10 +346,11 @@
                         <div class="cardcontainer">
                             <img src="../static/imgs/events/themet3.jpg" class="card-img-top" alt="...">
                             <div class="cardbody">
-                              <h6 class="date">25/09/2022</h6>
-                              <h5 class="card-title">The Met Brisbane</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                                <h6 class="date">25/09/2022</h6>
+                                <h5 class="card-title">The Met Brisbane</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
                             </div>
                             <h7 class="ticketstatus">Upcoming</h7>
                         </div>
@@ -322,7 +362,7 @@
                 <div class="row gy-3 gx-3">
 
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
