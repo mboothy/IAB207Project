@@ -1,16 +1,23 @@
-from flask import Blueprint
-from matplotlib.pyplot import get
-from jinja2 import Environment, PackageLoader, select_autoescape
+from flask import Blueprint, render_template
 
-env = Environment(
-    loader=PackageLoader("website"),
-    autoescape=select_autoescape()
-)
-
-bp = Blueprint('main', __name__)
+views = Blueprint('views', __name__)
 
 
-@bp.route('/')
-def index():
-    template = env.get_template("login.html")
-    print(template.render())
+@views.route('/')
+def home_page():
+    return render_template("index.html")
+
+
+@views.route('/Your_events')
+def Yourevents_page():
+    return render_template("yourevents.html")
+
+
+@views.route('/Create_an_event')
+def Create_an_event_page():
+    return render_template("create_an_event.html")
+
+
+@views.route('/Event_details')
+def Event_details_page():
+    return render_template("event_details_page.html")

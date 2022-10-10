@@ -1,15 +1,31 @@
-from flask import ( 
+from flask import (
     Blueprint, flash, render_template, request, url_for, redirect
-) 
-from werkzeug.security import generate_password_hash,check_password_hash
+)
+from werkzeug.security import generate_password_hash, check_password_hash
 #from .models import User
-from .forms import LoginForm,RegisterForm
-from flask_login import login_user, login_required,logout_user
+from .forms import LoginForm, RegisterForm
+from flask_login import login_user, login_required, logout_user
 from . import db
+from flask import Blueprint, render_template
 
 
-#create a blueprint
-bp = Blueprint('auth', __name__)
+# create a blueprint
+auth = Blueprint('auth', __name__)
+
+
+@auth.route('/login')
+def login_page():
+    return render_template("login.html")
+
+
+@auth.route('/sign_up')
+def sign_up_page():
+    return render_template("sign_up.html")
+
+
+@auth.route('/Edit_profile')
+def edit_profile_page():
+    return render_template("edit_profile.html")
 
 
 # this is the hint for a login function

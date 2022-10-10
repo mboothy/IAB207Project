@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/69dbc1186412d7831b88d8a78a360360?family=DIN+Condensed+Web);
+
 body {
     background-color: #121819;
     padding-left: 0%;
@@ -6,27 +8,136 @@ body {
     margin-right: 0%;
 }
 
+:root {
+    --pirilightblack: #0e0e0e;
+    --piriblue: #00beed;
+}
 
-.container{
+#profileicon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 1%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: var(--pirilightblack);
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 !important;
+    font-size: 25px;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: white;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin: 12px 0;
+
+}
+
+.sub-menu-link p {
+    margin-top: 12px;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    align-self: center;
+    font-size: 18px;
+
+}
+
+.sub-menu-link img {
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: trasnform 0.5s;
+
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+    color: white;
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+    color: white;
+}
+
+.container {
     margin-left: 0%;
     margin-right: 0%;
     width: 100%;
     float: left;
 }
-.container-fluid{
+
+.container-fluid {
     padding-left: 0%;
     padding-right: 0%;
     margin-left: 0%;
     margin-right: 0%;
 }
 
-
-*{
-    padding: 0;
-    margin: 0 ;
-    box-sizing: border-box;
+h1 {
+    color: white;
+    text-transform: capitalize;
+    font-family: "DIN Condensed Web";
+    src: url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.eot");
+    src: url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.woff") format("woff"), url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/69dbc1186412d7831b88d8a78a360360.svg#DIN Condensed Web") format("svg");
+    text-align: center;
+    letter-spacing: -0.01em;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 0%;
+    padding-right: 0%;
 }
-.nav-link{
+
+
+.nav-link {
     align-items: center;
     width: 10vw;
     margin-left: 0.1vw;
@@ -44,8 +155,9 @@ body {
 
 
 }
-@media  screen and (min-width:600px ) and (max-width:1100px ){
-    .nav-link{
+
+@media screen and (min-width:600px) and (max-width:1100px) {
+    .nav-link {
         align-items: center;
         width: 10vw;
         text-align: center;
@@ -59,75 +171,87 @@ body {
         font-weight: 700 !important;
         padding-left: 0%;
     }
-    .navbarbutton{ 
+
+    .navbarbutton {
         display: inline;
         align-items: center;
         width: 20%;
         border-radius: 60px;
-        padding: 0,0,0,0;
+        padding: 0, 0, 0, 0;
         margin-left: 0%;
         margin-left: 0%;
         margin-right: 0%;
     }
-    .nav-item{
-        align-self: center; 
+
+    .nav-item {
+        align-self: center;
         margin-right: 0%;
         margin-left: 0%;
-        padding: 0,0,0,0;
+        padding: 0, 0, 0, 0;
 
     }
-    
+
 }
 
-.navbar-calender{
+
+.navbar-calender {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.nav-item{
-   align-self: center; 
-   margin-right: 0%;
+
+.nav-item {
+    align-self: center;
+    margin-right: 0%;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: #17304d;
-} 
-.navbarbutton{ 
+}
+
+.navbarbutton {
     align-items: center;
     width: 10%;
     border-radius: 60px;
 }
 
 .navbarbutton:hover {
-    box-shadow:  10 8px 6px rgb(34, 60, 80, 0.16);
+    box-shadow: 10 8px 6px rgb(34, 60, 80, 0.16);
 }
-.navbar-brand{
-    padding-right: 100x;
+
+.navbar-brand {
     margin-left: 0%;
     margin-left: 10px;
 }
-.navbar{
+
+.navbar {
     padding-top: 10px;
-    background-image: linear-gradient(to top,rgba(0,0,0,0) , rgba(0,0,0,1));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     margin-bottom: 0%;
     margin-right: 0%;
     margin-left: 0%;
     width: 100%;
-    
+
 }
-.homepagenavbar{
-    margin: 0,0,0,0;
+
+.homepagenavbar {
+    margin: 0, 0, 0, 0;
     list-style: none;
     width: 100%;
 }
-.collapse{
+
+.collapse {
     margin-right: 0%;
 }
-.navbar-nav{
+
+.navbar-nav {
     margin-right: 0%;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     margin-right: 0%;
 }
-.search{
+
+.search {
     align-self: center;
     height: 2vw;
     width: 12vw;
@@ -136,9 +260,10 @@ body {
     outline: none;
     font-size: 1vw;
     border: 2px solid #00beed;
-    margin-right: -4vw;   
+    margin-right: -4vw;
 }
-.btn0{
+
+.btn0 {
     text-align: center;
     align-self: center;
     height: 2vw;
@@ -153,28 +278,32 @@ body {
     font-weight: 600;
     margin-right: 0.2vw;
 }
-.banner{
+
+.banner {
     width: 100%;
     height: 700px;
     position: relative;
     overflow: hidden;
 }
-.slider{
+
+.slider {
     width: 100%;
     height: 150vh;
     position: absolute;
     top: 0;
 
 }
-#slideImg{
+
+#slideImg {
     width: 100%;
     height: 600px;
     object-fit: cover;
 }
-.overlay{
+
+.overlay {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7),);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), );
     position: absolute;
     top: 0;
     vertical-align: middle;
@@ -182,19 +311,53 @@ body {
     display: flex;
     flex-direction: column;
 }
-.website-background{
+
+.website-background {
     background-color: #121819;
     width: 100%;
     height: 100%;
 }
-.burgermenu{
+
+.burgermenu {
     background: #00beed;
     color: white;
 }
-.logo-img{
-    width: 300px;
-    padding-right: 5vw;
-    height:  50px;
-    margin-left: 0%;
-    justify-content: flex-start;
+
+.logo-img {
+    width: clamp(200px, 20vw, 250px);
+    height: auto;
+    margin-left: 10px;
+    margin-right: clamp(10px, 4vw, 100px);
+    aspect-ratio: 16/4;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1100px) {
+    .logo-img {
+        width: clamp(150px, 20vw, 200px);
+        height: auto;
+        margin-left: 10px;
+        margin-right: 1vw;
+        aspect-ratio: 16/4;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .logo-img {
+        width: clamp(200px, 40vw, 500px);
+        height: auto;
+        aspect-ratio: 16/4;
+    }
+}
+
+.mainsection {
+    background-color: #121819;
+    width: 80vw;
+    height: 100%;
+    padding-bottom: 10px;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
 }
