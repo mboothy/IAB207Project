@@ -7,13 +7,22 @@
 {% block content %}
 <div class="mainsection">
     <h1>Sign up</h1>
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Username</label>
+    <div class="enterfield">
+        <label for="exampleFormControlInput1" class="form-label">Username</label>
+        <input type="email" class="form-control" id="enternameinput" placeholder="enter Username">
     </div>
-    <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+    <div class="enterfield">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="enternameinput" placeholder="enter Email">
+    </div>
+    <div class="enterfield">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="email" class="form-control" id="passwordinput" placeholder="enter Password">
+        <input type="email" class="form-control" id="passwordinput" placeholder="Comfirn Password">
+    </div>
+    <div class="form-floating mb-3" id="DOB">
+        <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Enter Date of Birth</label>
     </div>
 </div>
 {% endblock %}

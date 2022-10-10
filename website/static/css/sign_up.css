@@ -9,11 +9,11 @@
     justify-content: center;
     align-items: center;
     background-color: #121819;
-    width: 40vw;
-    height: 60%;
+    width: 50vw;
+    height: 80%;
     padding-bottom: 10px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -21,10 +21,32 @@
 }
 
 .mainsection h1 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700 !important;
     color: var(--piriblue);
     font-size: 50px;
+}
+
+.form-label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: var(--piriblue);
+    font-size: 25px;
+}
+
+.enterfield {
+    width: 40vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#passwordinput {
+    margin-bottom: 10px;
+}
+
+#DOB {
+    margin-top: 20px;
+    width: 300px;
 }

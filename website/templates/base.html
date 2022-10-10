@@ -31,7 +31,7 @@
                 <header>
                     <nav class="navbar navbar-expand-md me-auto mb-2 mb-ms-0 navbar-white" id="homepagenavbar">
                         <div class="container">
-                            <a class="navbar-brand" href="../templates/index.html">
+                            <a class="navbar-brand" href="/">
                                 <img class="logo-img" src="../static/imgs/logo9.png" href="" alt="">
                             </a>
                             <button class="navbar-toggler burgermenu" type="button" data-toggle="collapse"
@@ -49,16 +49,16 @@
                                     </form>
                                     <!-- main navbar items -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../templates/index.html">Browse</a>
+                                        <a class="nav-link" href="/">Browse</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/Recommended">Recommended</a>
+                                        <a class="nav-link" href="/">Recommended</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../templates/yourevents.html">your events</a>
+                                        <a class="nav-link" href="/Your_events">your events</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../templates/create_an_event.html">Create an event</a>
+                                        <a class="nav-link" href="/Create_an_event">Create an event</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contact-us">Contact us</a>
@@ -78,12 +78,12 @@
                                                 <p>Edit Profile</p>
                                                 <span>></span>
                                             </a>
-                                            <a href="#" class="sub-menu-link">
+                                            <a href="/sign_up" class="sub-menu-link">
                                                 <img src="../static/imgs/profileimgs/signup.png" alt="">
                                                 <p>Sign UP</p>
                                                 <span>></span>
                                             </a>
-                                            <a href="../templates/login.html" class="sub-menu-link">
+                                            <a href="/login" class="sub-menu-link">
                                                 <img src="../static/imgs/profileimgs/login.png" alt="">
                                                 <p>Login</p>
                                                 <span>></span>
@@ -101,11 +101,12 @@
                     </nav>
                 </header>
                 {% block content %}
-        
+
                 {% endblock %}
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
