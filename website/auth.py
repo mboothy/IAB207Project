@@ -15,7 +15,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login_page():
-    return render_template("login.html")
+    login_form = LoginForm()
+    return render_template("login.html", html_form=login_form)
 
 
 @auth.route('/sign_up')
@@ -25,7 +26,7 @@ def sign_up_page():
 
 @auth.route('/Edit_profile')
 def edit_profile_page():
-    return render_template("edit_profile.html")
+    return render_template("edit_profile_page.html")
 
 
 # this is the hint for a login function
