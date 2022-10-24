@@ -17,7 +17,7 @@ def create_app():
     app.debug = True
     app.secret_key = 'utroutoru'
     # set the app configuration data
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     # initialize db with flask app
     db.init_app(app)

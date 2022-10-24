@@ -12,23 +12,36 @@
 
 {% block content %}
 <div class="mainsection">
-    <h1>Sign up</h1>
-    <div class="enterfield">
-        <label for="exampleFormControlInput1" class="form-label">Username</label>
-        <input type="email" class="form-control" id="enternameinput" placeholder="enter Username">
-    </div>
-    <div class="enterfield">
-        <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="enternameinput" placeholder="enter Email">
-    </div>
-    <div class="enterfield">
-        <label for="exampleFormControlInput1" class="form-label">Password</label>
-        <input type="email" class="form-control" id="passwordinput" placeholder="enter Password">
-        <input type="email" class="form-control" id="passwordinput" placeholder="Comfirn Password">
-    </div>
-    <div class="form-floating mb-3" id="DOB">
-        <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Enter Date of Birth</label>
-    </div>
+    <form method="POST">
+        <h1>Sign up</h1>
+        <div class="enterfield">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="enterfield">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="enterfield">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1"
+                placeholder="Enter user password">
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
+        </div>
+        <div class="dateandimagediv">
+            <div class="dateofbirthdiv">
+                <label for="Dateofbirth" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="Dateofbirth" name="Dateofbirth">
+            </div>
+            <div class="imgselectdiv">
+                <label for="formFile" class="form-label">Select a profile img</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+        </div>
+
+        <div class="buttondiv">
+            <button type="submit" class="signupbutton">Sign up</button>
+        </div>
+    </form>
 </div>
 {% endblock %}

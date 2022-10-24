@@ -13,9 +13,19 @@
 
 {% block content %}
 <div class="mainsection">
-    <h1>login</h1>
-    <div class="form-floating">
-        {{wtf.quick_form(html_form)}}
-    </div>
+    <form method="POST">
+        <h1 class="logintitle">login</h1>
+        <div class="enterfield">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="enterfield">
+            <label for="password1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1">
+        </div>
+        <div class="buttondiv">
+            <button type="submit" class="loginbutton">Submit</button>
+        </div>
+    </form>
 </div>
 {% endblock %}
