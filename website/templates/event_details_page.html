@@ -1,433 +1,334 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PLus One</title>
-    <link href="//db.onlinewebfonts.com/c/69dbc1186412d7831b88d8a78a360360?family=DIN+Condensed+Web" rel="stylesheet"
-        type="text/css" />
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/buy_ticket.css">
-    <link rel="shortcut icon" href="../static/imgs/favcon2.png">
-    <!--using-Font-Awesome-------------------->
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-</head>
-</head>
+{% block head %}
+<link rel="stylesheet" href="../static/css/buy_ticket.css">
+{% endblock %}
 
-<body>
-    <!-- whole container around the whole website -->
-    <div class="container-fluid bg-black">
-        <!-- background img -->
-        <div class="banner">
-            <div class="slider">
-                <img src="../static/imgs/carousel images/splendour.jpg" id="slideImg">
+{% block header %}
+<div class="slider">
+    <img src="../static/imgs/carousel images/splendour.jpg" id="slideImg">
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="titlecontainer">
+    <h5 class="event-title">Splendour in the grass</h5>
+    <h6 class="eventdate">22 July 2022 – 24 July 2022</h6>
+</div>
+<div class="mainsection">
+    <div class="eventdetailssection">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="overlay">
-                <header>
-                    <nav class="navbar navbar-expand-md me-auto mb-2 mb-ms-0 navbar-white" id="homepagenavbar">
-                        <div class="container">
-                            <a class="navbar-brand" href="/">
-                                <img class="logo-img" src="../static/imgs/logo9.png" href="" alt="">
-                            </a>
-                            <button class="navbar-toggler burgermenu" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mb-lg">
-                                    <!-- search box  -->
-                                    <form class="d-flex" role="search">
-                                        <input class="px-2 search" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn0" type="submit">Search</button>
-                                    </form>
-                                    <!-- main navbar items -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/">Browse</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/">Recommended</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/Your_events">your events</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/Create_an_event">Create an event</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/contact-us">Contact us</a>
-                                    </li>
-                                    <img src="../static/imgs/profileimgs/c-2.jpg" id="profileicon"
-                                        onclick="toggleMenu()">
-
-                                    <div class="sub-menu-wrap" id="subMenu">
-                                        <div class="sub-menu">
-                                            <div class="user-info">
-                                                <img src="../static/imgs/profileimgs/c-2.jpg">
-                                                <h1>piri cavanagh</h1>
-                                            </div>
-                                            <hr>
-                                            <a href="{{url_for('auth.edit_profile_page')}}" class="sub-menu-link">
-                                                <img src="../static/imgs/profileimgs/setting.png" alt="">
-                                                <p>Edit Profile</p>
-                                                <span>></span>
-                                            </a>
-                                            <a href="{{url_for('auth.sign_up_page')}}" class="sub-menu-link">
-                                                <img src="../static/imgs/profileimgs/signup.png" alt="">
-                                                <p>Sign UP</p>
-                                                <span>></span>
-                                            </a>
-                                            <a href="{{url_for('auth.login_page')}}" class="sub-menu-link">
-                                                <img src="../static/imgs/profileimgs/login.png" alt="">
-                                                <p>Login</p>
-                                                <span>></span>
-                                            </a>
-                                            <a href="#" class="sub-menu-link">
-                                                <img src="../static/imgs/profileimgs/logout.png" alt="">
-                                                <p>Logout</p>
-                                                <span>></span>
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </header>
-                <div class="titlecontainer">
-                    <h5 class="event-title">Splendour in the grass</h5>
-                    <h6 class="eventdate">22 July 2022 – 24 July 2022</h6>
-                </div>
-                <div class="mainsection">
-                    <div class="eventdetailssection">
-                        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="overlay-image"
-                                        style="background-image: url('../static/imgs/carousel images/splendour2.jpg');">
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="overlay-image"
-                                        style="background-image: url('../static/imgs/carousel images/splendour4.webp');">
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="overlay-image"
-                                        style="background-image: url('../static/imgs/carousel images/splendour3.jpg');">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev " type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="detailsbody">
-                            <div class="location_status">
-                                <h9 class="eventtype"><span>event type:</span> Festival</h9>
-                                <h10 class="eventstatus">Upcoming</h10>
-                            </div>
-                            <div class="pricediv">
-                                <h9 class="price">$500 aud</h9>
-                                <a href="splendour" class="pricebutton">BUY TICKETS</a>
-                                <h1>Thursday
-                                    12:00pm to 3:00am
-                                </h1>
-                                <h2>Firday
-                                    1:00pm to 3:00am
-                                </h2>
-                                <h3>Saturday
-                                    1:00pm to 3:00am
-                                </h3>
-                            </div>
-                            <div class="textandmap">
-                                <p class="event-text">
-                                    Splendour in the grass 2022!!!!<br>
-                                    <br>
-                                    IT'S HAPPENING...you’ll be spending #SITG2022<br>
-                                    <br>
-                                    with Yeah Yeah Yeahs, Glass Animals, Liam Gallagher, Kasey Musgraves, Duke Dumont
-                                    Live, Violent Soho, DMA's, Yungblud, Tim Minchin, Jack Harlow, Amyl & The Sniffers,
-                                    Dillon Francis, The Jungle Giants, Oliver Tree, Mura Masa, G Flip, Tierra Whack &
-                                    much more. 😍
-                                    All these awesome artists will join our headliners Gorillaz, The Strokes & Tyler,
-                                    The Creator! If you already have a ticket you are all set! A limited number of
-                                    pre-loved tickets go on sale via moshtix from 9am AEDT Monday 6th December.
-                                    View the full lineup and ticketing info over on our website!<br>
-                                    👉 splndr.co/2022info
-                                </p>
-                                <img class="map" src="../static/imgs/map.JPG">
-                            </div>
-                        </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="overlay-image"
+                        style="background-image: url('../static/imgs/carousel images/splendour2.jpg');">
                     </div>
-                    <div class="commentsection">
-                        <button type="button" class="btn" id="submitcomment">comment</button>
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        <div class="profile">
-                                            <!--img---->
-                                            <div class="profile-img">
-                                                <img src="../static/imgs/profileimgs/c-1.jpg" />
-                                            </div>
-                                            <!--name-and-username-->
-                                            <div class="name-user">
-                                                <strong>Touseeq Ijaz</strong>
-                                                <span>@touseeqijazweb</span>
-                                            </div>
-                                        </div>
-                                        <div class="reviews">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="panelsStayOpen-headingOne">
-                                    <div class="accordion-body">
-                                        John Yolpos Gleeson the only problem is there will be a capped amount of
-                                        attendence numbers for each day. Take into account that half of the venue is
-                                        under water. You got no chance
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseTwo">
-                                        <div class="profile">
-                                            <!--img---->
-                                            <div class="profile-img">
-                                                <img src="../static/imgs/profileimgs/c-2.jpg" />
-                                            </div>
-                                            <!--name-and-username-->
-                                            <div class="name-user">
-                                                <strong>Oli Ivett</strong>
-                                                <span>@oliivett</span>
-                                            </div>
-                                        </div>
-                                        <div class="reviews">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingTwo">
-                                    <div class="accordion-body">
-                                        Release a statement on the bus situation from last night please. People waiting
-                                        7 hours for a bus, without water and in the mud,and hardly a staff member in
-                                        site is unacceptable and dangerous. Saw plenty of police walking around at the
-                                        end of the festival last night, yet none of them jumped on crowd management or
-                                        helped your staff, who I saw 3 of, trying to direct the thousands of people
-                                        trying to get home. Is the bus situation going to be the same tonight? Should we
-                                        even bother going today? The weather might be out of your control but you’ve had
-                                        3 years to plan for the worst case scenarios.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseThree">
-                                        <div class="profile">
-                                            <!--img---->
-                                            <div class="profile-img">
-                                                <img src="../static/imgs/profileimgs/c-3.jpg" />
-                                            </div>
-                                            <!--name-and-username-->
-                                            <div class="name-user">
-                                                <strong>Clancy Lucas</strong>
-                                                <span>@ClancyLucas123</span>
-                                            </div>
-                                        </div>
-                                        <div class="reviews">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                            <i class="far fa-star"></i>
-                                            <!--Empty star-->
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingThree">
-                                    <div class="accordion-body">
-                                        Splendour in the Grass can we use our Friday tickets for today or Sunday rather
-                                        than a refund? I paid a lot of money to make my Friday splendour date work. As a
-                                        loyal punter I feel like everyone including myself that missed yesterday due to
-                                        weather sho… See more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image"
+                        style="background-image: url('../static/imgs/carousel images/splendour4.webp');">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image"
+                        style="background-image: url('../static/imgs/carousel images/splendour3.jpg');">
                     </div>
                 </div>
             </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="cards-libary overflow-hidden">
-            <h10 class="cardstitle">Similar events</h10>
-            <hr class="similar-events-line" width="90%" />
-            <div class="row gy-3 gx-3">
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">22 July 2022 – 24 July 2022</h6>
-                            <h5 class="card-title">Splendour in the grass</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus">Upcoming</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/carousel images/ultra.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">24 Mar – 26 Mar 2023</h6>
-                            <h5 class="card-title">Ultra Miami 2022</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus" id="closed">Inactive</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/untold.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">4 Aug – 7 Aug 2022</h6>
-                            <h5 class="card-title">Untold 2022</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus" id="closed">Booked</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/tommorland.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">15 July – 31 July 2022</h6>
-                            <h5 class="card-title">Tommorland 2022</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus" id="closed">Cancelled</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/kickons2.jpeg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">12/09/2022</h6>
-                            <h5 class="card-title">Kick ons Club</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus">Upcoming</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/omnia.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">23/09/2022</h6>
-                            <h5 class="card-title">Omnia Las Vegas</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus">Upcoming</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/prohabition.png" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">30/09/2022</h6>
-                            <h5 class="card-title">Prohabition Club</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus" id="closed">Booked</h7>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="cardcontainer">
-                        <img src="../static/imgs/events/themet3.jpg" class="card-img-top" alt="...">
-                        <div class="cardbody">
-                            <h6 class="date">25/09/2022</h6>
-                            <h5 class="card-title">The Met Brisbane</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
-                        </div>
-                        <h7 class="ticketstatus">Upcoming</h7>
-                    </div>
-                </div>
-
+        <div class="detailsbody">
+            <div class="location_status">
+                <h9 class="eventtype"><span>event type:</span> Festival</h9>
+                <h10 class="eventstatus">Upcoming</h10>
             </div>
-            <div class="row gy-3 gx-3">
-
+            <div class="pricediv">
+                <h9 class="price">$500 aud</h9>
+                <a href="splendour" class="pricebutton">BUY TICKETS</a>
+                <h1>Thursday
+                    12:00pm to 3:00am
+                </h1>
+                <h2>Firday
+                    1:00pm to 3:00am
+                </h2>
+                <h3>Saturday
+                    1:00pm to 3:00am
+                </h3>
             </div>
-            <div class="row gy-3 gx-3">
-
+            <div class="textandmap">
+                <p class="event-text">
+                    Splendour in the grass 2022!!!!<br>
+                    <br>
+                    IT'S HAPPENING...you’ll be spending #SITG2022<br>
+                    <br>
+                    with Yeah Yeah Yeahs, Glass Animals, Liam Gallagher, Kasey Musgraves, Duke Dumont
+                    Live, Violent Soho, DMA's, Yungblud, Tim Minchin, Jack Harlow, Amyl & The Sniffers,
+                    Dillon Francis, The Jungle Giants, Oliver Tree, Mura Masa, G Flip, Tierra Whack &
+                    much more. 😍
+                    All these awesome artists will join our headliners Gorillaz, The Strokes & Tyler,
+                    The Creator! If you already have a ticket you are all set! A limited number of
+                    pre-loved tickets go on sale via moshtix from 9am AEDT Monday 6th December.
+                    View the full lineup and ticketing info over on our website!<br>
+                    👉 splndr.co/2022info
+                </p>
+                <img class="map" src="../static/imgs/map.JPG">
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-</body>
-</div>
-</body>
+    <div class="commentsection">
+        <button type="button" class="btn" id="submitcomment">comment</button>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        <div class="profile">
+                            <!--img---->
+                            <div class="profile-img">
+                                <img src="../static/imgs/profileimgs/c-1.jpg" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Touseeq Ijaz</strong>
+                                <span>@touseeqijazweb</span>
+                            </div>
+                        </div>
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        John Yolpos Gleeson the only problem is there will be a capped amount of
+                        attendence numbers for each day. Take into account that half of the venue is
+                        under water. You got no chance
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        <div class="profile">
+                            <!--img---->
+                            <div class="profile-img">
+                                <img src="../static/imgs/profileimgs/c-2.jpg" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Oli Ivett</strong>
+                                <span>@oliivett</span>
+                            </div>
+                        </div>
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        Release a statement on the bus situation from last night please. People waiting
+                        7 hours for a bus, without water and in the mud,and hardly a staff member in
+                        site is unacceptable and dangerous. Saw plenty of police walking around at the
+                        end of the festival last night, yet none of them jumped on crowd management or
+                        helped your staff, who I saw 3 of, trying to direct the thousands of people
+                        trying to get home. Is the bus situation going to be the same tonight? Should we
+                        even bother going today? The weather might be out of your control but you’ve had
+                        3 years to plan for the worst case scenarios.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        <div class="profile">
+                            <!--img---->
+                            <div class="profile-img">
+                                <img src="../static/imgs/profileimgs/c-3.jpg" />
+                            </div>
+                            <!--name-and-username-->
+                            <div class="name-user">
+                                <strong>Clancy Lucas</strong>
+                                <span>@ClancyLucas123</span>
+                            </div>
+                        </div>
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                            <i class="far fa-star"></i>
+                            <!--Empty star-->
+                        </div>
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        Splendour in the Grass can we use our Friday tickets for today or Sunday rather
+                        than a refund? I paid a lot of money to make my Friday splendour date work. As a
+                        loyal punter I feel like everyone including myself that missed yesterday due to
+                        weather sho… See more
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</html>
+    </div>
+</div>
+</div>
+</div>
+<div class="cards-libary overflow-hidden">
+    <h10 class="cardstitle">Similar events</h10>
+    <hr class="similar-events-line" width="90%" />
+    <div class="row gy-3 gx-3">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">22 July 2022 – 24 July 2022</h6>
+                    <h5 class="card-title">Splendour in the grass</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus">Upcoming</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/carousel images/ultra.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">24 Mar – 26 Mar 2023</h6>
+                    <h5 class="card-title">Ultra Miami 2022</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus" id="closed">Inactive</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/untold.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">4 Aug – 7 Aug 2022</h6>
+                    <h5 class="card-title">Untold 2022</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus" id="closed">Booked</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/tommorland.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">15 July – 31 July 2022</h6>
+                    <h5 class="card-title">Tommorland 2022</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus" id="closed">Cancelled</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/kickons2.jpeg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">12/09/2022</h6>
+                    <h5 class="card-title">Kick ons Club</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus">Upcoming</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/omnia.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">23/09/2022</h6>
+                    <h5 class="card-title">Omnia Las Vegas</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus">Upcoming</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/prohabition.png" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">30/09/2022</h6>
+                    <h5 class="card-title">Prohabition Club</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus" id="closed">Booked</h7>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="cardcontainer">
+                <img src="../static/imgs/events/themet3.jpg" class="card-img-top" alt="...">
+                <div class="cardbody">
+                    <h6 class="date">25/09/2022</h6>
+                    <h5 class="card-title">The Met Brisbane</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                        of the card's content.</p>
+                    <a href="../templates/splendour.html" class="button">BUY TICKETS</a>
+                </div>
+                <h7 class="ticketstatus">Upcoming</h7>
+            </div>
+        </div>
+
+    </div>
+    <div class="row gy-3 gx-3">
+
+    </div>
+    <div class="row gy-3 gx-3">
+    </div>
+    {% endblock %}

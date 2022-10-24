@@ -23,15 +23,15 @@
     <div class="container-fluid bg-black">
         <!-- background img -->
         <div class="banner">
-            <video
-                src="https://player.vimeo.com/progressive_redirect/playback/727922541/rendition/1080p/file.mp4?loc=external&amp;signature=cbfc2ec884c2abea8922dbc94e0821a1683b460e02d30925c5b3361882c1d2b3"
-                autoplay="" loop="" muted="" playsinline=""></video>
+            {% block header %}
+
+            {% endblock %}
             <div class="overlay">
                 <!-- start of navbar -->
                 <header>
                     <nav class="navbar navbar-expand-md me-auto mb-2 mb-ms-0 navbar-white" id="homepagenavbar">
                         <div class="container">
-                            <a class="navbar-brand" href="/">
+                            <a class="navbar-brand" href="{{url_for('views.home_page')}}">
                                 <img class="logo-img" src="../static/imgs/logo9.png" href="" alt="">
                             </a>
                             <button class="navbar-toggler burgermenu" type="button" data-toggle="collapse"
@@ -49,16 +49,17 @@
                                     </form>
                                     <!-- main navbar items -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/">Browse</a>
+                                        <a class="nav-link" href="{{url_for('views.home_page')}}">Browse</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/">Recommended</a>
+                                        <a class="nav-link" href="{{url_for('views.home_page')}}">Recommended</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/Your_events">your events</a>
+                                        <a class="nav-link" href="{{url_for('views.Yourevents_page')}}">your events</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/Create_an_event">Create an event</a>
+                                        <a class="nav-link" href="{{url_for('views.Create_an_event_page')}}">Create an
+                                            event</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contact-us">Contact us</a>
