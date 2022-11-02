@@ -20,6 +20,7 @@ def Create_an_event_page():
     return render_template("create_an_event.html")
 
 
-@views.route('/Event_details')
-def Event_details_page():
-    return render_template("event_details_page.html")
+@views.route('/event/<int:event_id>/')
+def Event_details(event_id):
+    event = Events.query.get_or_404(event_id)
+    return render_template("event_details_page.html", event=event)
