@@ -7,10 +7,11 @@ from flask import (
 from matplotlib.pyplot import get
 from sqlalchemy import true
 from werkzeug.security import generate_password_hash, check_password_hash
-#from .models import User
 from .forms import LoginForm, RegisterForm
 from flask_login import login_user, login_required, logout_user
 from . import db
+from .models import User
+from flask_login import login_user, login_required, logout_user, current_user
 from flask import Blueprint, render_template
 
 
@@ -20,40 +21,53 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template("login.html", boolean=True)
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
 
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password):
+                flash('Logged in successfully!', category='success')
+                login_user(user, remember=True)
+                return redirect(url_for('views.home'))
+            else:
+                flash('Incorrect password, try again.', category='error')
+        else:
+            flash('Email does not exist.', category='error')
 
-@auth.route('/sign_up', methods=['GET', 'POST'])
-def sign_up_page():
-    return render_template("sign_up.html")
-
+    return render_template("login.html", user=current_user)
 
 @auth.route('/Edit_profile')
 def edit_profile_page():
     return render_template("edit_profile_page.html")
 
+@auth.route('/sign-up', methods=['GET', 'POST'])
+def sign_up_page():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        username = request.form.get('username')
+        password1 = request.form.get('password1')
+        password2 = request.form.get('password2')
 
-# this is the hint for a login function
-# @bp.route('/login', methods=['GET', 'POST'])
-# def authenticate(): #view function
-#     print('In Login View function')
-#     login_form = LoginForm()
-#     error=None
-#     if(login_form.validate_on_submit()==True):
-#         user_name = login_form.user_name.data
-#         password = login_form.password.data
-#         u1 = User.query.filter_by(name=user_name).first()
-#         if u1 is None:
-#             error='Incorrect user name'
-#         elif not check_password_hash(u1.password_hash, password): # takes the hash and password
-#             error='Incorrect password'
-#         if error is None:
-#             login_user(u1)
-#             nextp = request.args.get('next') #this gives the url from where the login page was accessed
-#             print(nextp)
-#             if next is None or not nextp.startswith('/'):
-#                 return redirect(url_for('index'))
-#             return redirect(nextp)
-#         else:
-#             flash(error)
-#     return render_template('user.html', form=login_form, heading='Login')
+        user = User.query.filter_by(username=username).first()
+        if user:
+            flash('Email already exists.', category='error')
+        elif len(username) < 2:
+            flash('First name must be greater than 1 character.', category='error')
+        elif len(email) < 4:
+            flash('Email must be greater than 3 characters.', category='error')
+        elif password1 != password2:
+            flash('Passwords don\'t match.', category='error')
+        elif len(password1) < 7:
+            flash('Password must be at least 7 characters.', category='error')
+        else:
+            new_user = User(email=email, username=username, password=generate_password_hash(
+                password1, method='sha256'))
+            db.session.add(new_user)
+            db.session.commit()
+            login_user(new_user, remember=True)
+            flash('Account created!', category='success')
+            return redirect(url_for('views.home'))
+
+    return render_template('sign_up.html', user=current_user)
