@@ -1,0 +1,52 @@
+:root {
+    --pirilightblack: #0e0e0e;
+    --piriblue: #00beed;
+}
+
+.banner {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 0;
+
+}
+
+#slideImg {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), );
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainsection {
+    background-color: #121819;
+    width: 50vw;
+    height: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    border: 2px solid black;
+}
