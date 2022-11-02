@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), unique=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String)
-    dob = db.Column(db.Date)
+    dob = db.Column(db.String)
     profileImg = db.Column(db.String(150))
 
 
