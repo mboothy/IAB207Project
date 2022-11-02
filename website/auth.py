@@ -4,7 +4,7 @@ from xmlrpc.client import boolean
 from flask import (
     Blueprint, flash, render_template, request, url_for, redirect
 )
-from matplotlib.pyplot import get
+# from matplotlib.pyplot import get
 from sqlalchemy import true
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
