@@ -1,13 +1,18 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from .models import Events
-
+from . import db
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
 def home_page():
-    events = Events.query.all()
-    return render_template("index.html", events=events)
+    args = request.args
+    eventType = args.get('type')
+    if eventType is not None: 
+        events = Events.query.filter_by(type=eventType).all()
+    else:
+        events = Events.query.all()
+    return render_template("index.html", events=events, filter=eventType)
 
 
 @views.route('/Your_events')
