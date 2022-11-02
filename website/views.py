@@ -8,7 +8,7 @@ views = Blueprint('views', __name__)
 
 
 @views.route('/')
-@login_required
+
 def home_page():
     args = request.args
     eventType = args.get('type')
@@ -20,16 +20,19 @@ def home_page():
 
 
 @views.route('/Your_events')
+@login_required
 def Yourevents_page():
     return render_template("yourevents.html")
 
 
 @views.route('/Create_an_event')
+@login_required
 def Create_an_event_page():
     return render_template("create_an_event.html")
 
 
 @views.route('/Hosted_events')
+@login_required
 def Hosted_events_page():
     authorUsername = ''
     events = Events.query.filter_by(author=authorUsername).all()
