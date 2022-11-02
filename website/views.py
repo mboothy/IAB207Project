@@ -1,10 +1,14 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, flash, jsonify
 from .models import Events
+from . import db
+import json
+from flask_login import login_required, current_user
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
+@login_required
 def home_page():
     events = Events.query.all()
     return render_template("index.html", events=events)
