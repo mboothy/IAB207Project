@@ -13,8 +13,8 @@
 
 {% block content %}
 <div class="titlecontainer">
-    <h5 class="event-title">Splendour in the grass</h5>
-    <h6 class="eventdate">22 July 2022 – 24 July 2022</h6>
+    <h5 class="event-title">{event.name}</h5>
+    <h6 class="eventdate">{event.startDate} – {event.endDate}</h6>
 </div>
 <div class="mainsection">
     <div class="eventdetailssection">
@@ -57,11 +57,11 @@
         </div>
         <div class="detailsbody">
             <div class="location_status">
-                <h9 class="eventtype"><span>event type:</span> Festival</h9>
-                <h10 class="eventstatus">Upcoming</h10>
+                <h9 class="eventtype"><span>event type:</span> {event.type}</h9>
+                <h10 class="eventstatus">{event.status}</h10>
             </div>
             <div class="pricediv">
-                <h9 class="price">$500 aud</h9>
+                <h9 class="price">${event.price} aud</h9>
                 <a href="splendour" class="pricebutton">BUY TICKETS</a>
                 <h1>Thursday
                     12:00pm to 3:00am
@@ -74,20 +74,7 @@
                 </h3>
             </div>
             <div class="textandmap">
-                <p class="event-text">
-                    Splendour in the grass 2022!!!!<br>
-                    <br>
-                    IT'S HAPPENING...you’ll be spending #SITG2022<br>
-                    <br>
-                    with Yeah Yeah Yeahs, Glass Animals, Liam Gallagher, Kasey Musgraves, Duke Dumont
-                    Live, Violent Soho, DMA's, Yungblud, Tim Minchin, Jack Harlow, Amyl & The Sniffers,
-                    Dillon Francis, The Jungle Giants, Oliver Tree, Mura Masa, G Flip, Tierra Whack &
-                    much more. 😍
-                    All these awesome artists will join our headliners Gorillaz, The Strokes & Tyler,
-                    The Creator! If you already have a ticket you are all set! A limited number of
-                    pre-loved tickets go on sale via moshtix from 9am AEDT Monday 6th December.
-                    View the full lineup and ticketing info over on our website!<br>
-                    👉 splndr.co/2022info
+                <p class="event-text">{event.description}
                 </p>
                 <img class="map" src="../static/imgs/map.JPG">
             </div>
