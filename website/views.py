@@ -8,15 +8,14 @@ views = Blueprint('views', __name__)
 
 
 @views.route('/')
-
 def home_page():
     args = request.args
     eventType = args.get('type')
-    if eventType is not None: 
+    if eventType is not None:
         events = Events.query.filter_by(type=eventType).all()
     else:
         events = Events.query.all()
-    return render_template("index.html", events=events, filter=eventType,user=current_user)
+    return render_template("index.html", events=events, filter=eventType, user=current_user)
 
 
 @views.route('/Your_events')
@@ -28,19 +27,25 @@ def Yourevents_page():
 @views.route('/Create_an_event')
 @login_required
 def Create_an_event_page():
-    return render_template("create_an_event.html",user=current_user)
+    return render_template("create_an_event.html", user=current_user)
+
+
+@views.route('/edit/<int:event_id>/')
+def Edit_a_hosted_event(event_id):
+    event = Events.query.get_or_404(event_id)
+    return render_template("edit_a_hosted_event.html", event=event, user=current_user)
 
 
 @views.route('/Hosted_events')
 @login_required
 def Hosted_events_page():
-    
+
     authorUsername = current_user.username
     events = Events.query.filter_by(author=authorUsername).all()
-    return render_template("Hosted_events.html", events=events,user=current_user)
+    return render_template("Hosted_events.html", events=events, user=current_user)
 
 
 @views.route('/event/<int:event_id>/')
 def Event_details(event_id):
     event = Events.query.get_or_404(event_id)
-    return render_template("event_details_page.html", event=event,user=current_user)
+    return render_template("event_details_page.html", event=event, user=current_user)
