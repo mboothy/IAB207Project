@@ -16,7 +16,7 @@ def home_page():
         events = Events.query.filter_by(type=eventType).all()
     else:
         events = Events.query.all()
-    return render_template("index.html", events=events, filter=eventType)
+    return render_template("index.html", events=events, filter=eventType,user=current_user)
 
 
 @views.route('/Your_events')
@@ -28,7 +28,7 @@ def Yourevents_page():
 @views.route('/Create_an_event')
 @login_required
 def Create_an_event_page():
-    return render_template("create_an_event.html")
+    return render_template("create_an_event.html",user=current_user)
 
 
 @views.route('/Hosted_events')
@@ -43,4 +43,4 @@ def Hosted_events_page():
 @views.route('/event/<int:event_id>/')
 def Event_details(event_id):
     event = Events.query.get_or_404(event_id)
-    return render_template("event_details_page.html", event=event)
+    return render_template("event_details_page.html", event=event,user=current_user)

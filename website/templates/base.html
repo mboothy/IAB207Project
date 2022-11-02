@@ -66,10 +66,17 @@
 
                                     <div class="sub-menu-wrap" id="subMenu">
                                         <div class="sub-menu">
+                                            {% if user.username %}
                                             <div class="user-info">
                                                 <img src="/static/imgs/profileimgs/c-2.jpg">
-                                                <h1>piri cavanagh</h1>
+                                                <h1>{{user.username}}</h1>
                                             </div>
+                                            {% else %}
+                                            <div class="user-info">
+                                                <img src="/static/imgs/profileimgs/c-2.jpg">
+                                                <h1>Guest</h1>
+                                            </div>
+                                            {% endif %}
                                             <hr>
                                             <a href="{{url_for('views.Hosted_events_page')}}" class="sub-menu-link">
                                                 <img src="/static/imgs/profileimgs/setting.png" alt="">
