@@ -10,3 +10,20 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String)
     dob = db.Column(db.Date)
     profileImg = db.Column(db.String(150))
+
+class Events(db.Model):
+    __tablename__ = 'events'
+    name = db.Column(db.String)
+    eventId = db.Column(db.Integer, primary_key=True)
+    startDate = db.Column.date(db.date)
+    endDate = db.Column.date(db.date)
+    description = db.Column(db.String)
+    location = db.Column(db.String)
+    type = db.Column(db.String)
+    status = db.Column(db.String)
+    price = db.Column(db.Integer)
+    tickerNum = db.Column(db.Integer)
+    ageRestrict = db.Column(db.Integer)
+    author = db.Column(db.Integer, foreign_key=True)
+    
+    

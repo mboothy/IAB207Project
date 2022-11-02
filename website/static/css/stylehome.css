@@ -20,6 +20,10 @@ body {
     overflow: hidden;
 }
 
+#profileicon:hover {
+    cursor: pointer;
+}
+
 .sub-menu-wrap {
     position: absolute;
     top: 100%;
@@ -307,6 +311,7 @@ ul.secondheadings>li {
     font-size: clamp(6px, 1.1vw, 15px);
     font-weight: bolder;
     align-items: center;
+    cursor: pointer;
 }
 
 .calender-link:hover {
