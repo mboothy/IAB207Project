@@ -20,20 +20,11 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login_page():
-    data = request.form
-    print(data)
     return render_template("login.html", boolean=True)
 
 
 @auth.route('/sign_up', methods=['GET', 'POST'])
 def sign_up_page():
-    form = RegisterForm()
-    if request.method == 'POST':
-        username = request.form, get('username')
-        email = request.form.get('email')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
-        Dateofbirth = request.form.get('Dateofbirth')
     return render_template("sign_up.html")
 
 
