@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), unique=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String)
-    dob = db.Column(db.Date)
+    dob = db.Column(db.String)
     profileImg = db.Column(db.String(150))
 
 
@@ -16,8 +16,8 @@ class Events(db.Model):
     __tablename__ = 'events'
     name = db.Column(db.String)
     eventId = db.Column(db.Integer, primary_key=True)
-    startDate = db.Column(db.Date)
-    endDate = db.Column(db.Date)
+    startDate = db.Column(db.String)
+    endDate = db.Column(db.String)
     description = db.Column(db.String)
     location = db.Column(db.String)
     type = db.Column(db.String)
@@ -25,4 +25,4 @@ class Events(db.Model):
     price = db.Column(db.Integer)
     ticketNum = db.Column(db.Integer)
     ageRestrict = db.Column(db.Integer)
-    author = db.Column(db.Integer, foreign_key=True)
+    author = db.Column(db.Integer)
