@@ -45,6 +45,8 @@ def sign_up_page():
         username = request.form.get('username')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
+        dob = request.form.get('Dateofbirth')
+        username = request.form.get('username')
 
         user = User.query.filter_by(username=username).first()
         if user:
@@ -59,11 +61,11 @@ def sign_up_page():
             flash('Password must be at least 7 characters.', category='error')
         else:
             new_user = User(email=email, username=username, password=generate_password_hash(
-                password1, method='sha256'))
+                password1, method='sha256',dob=dob))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.home_page'))
 
     return render_template('sign_up.html', user=current_user)
