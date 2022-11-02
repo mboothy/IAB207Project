@@ -38,11 +38,6 @@ def login_page():
     return render_template("login.html", user=current_user)
 
 
-@auth.route('/Edit_profile')
-def edit_profile_page():
-    return render_template("edit_profile_page.html")
-
-
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up_page():
     if request.method == 'POST':

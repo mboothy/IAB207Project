@@ -13,8 +13,8 @@
 
 {% block content %}
 <div class="titlecontainer">
-    <h5 class="event-title">{event.name}</h5>
-    <h6 class="eventdate">{event.startDate} – {event.endDate}</h6>
+    <h5 class="event-title">{{event.name}}</h5>
+    <h6 class="eventdate">{{event.startDate}} – {{event.endDate}}</h6>
 </div>
 <div class="mainsection">
     <div class="eventdetailssection">
@@ -57,11 +57,11 @@
         </div>
         <div class="detailsbody">
             <div class="location_status">
-                <h9 class="eventtype"><span>event type:</span> {event.type}</h9>
-                <h10 class="eventstatus">{event.status}</h10>
+                <h9 class="eventtype"><span>event type:</span> {{event.type}}</h9>
+                <h10 class="eventstatus">{{event.status}}</h10>
             </div>
             <div class="pricediv">
-                <h9 class="price">${event.price} aud</h9>
+                <h9 class="price">${{event.price}} aud</h9>
                 <a href="splendour" class="pricebutton">BUY TICKETS</a>
                 <h1>Thursday
                     12:00pm to 3:00am
@@ -74,7 +74,7 @@
                 </h3>
             </div>
             <div class="textandmap">
-                <p class="event-text">{event.description}
+                <p class="event-text">{{event.description}}
                 </p>
                 <img class="map" src="../static/imgs/map.JPG">
             </div>
