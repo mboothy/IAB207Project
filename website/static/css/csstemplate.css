@@ -24,7 +24,7 @@ body {
     position: absolute;
     top: 100%;
     right: 1%;
-    width: 320px;
+    width: clamp(200px, 20vw, 370px);
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
