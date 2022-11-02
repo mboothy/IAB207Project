@@ -78,88 +78,42 @@
             </section>
             <section class="col-12" id="fs_time_body">
                 <span class="heading">
-                    Event type
+                    Event type <a href="/"> Clear</a>
                 </span>
                 <div class="contents">
                     <ul>
-                        <li>
-                            <span>FESTIVALS</span>
+                        <li {% if filter == "Festival" %} class="active" {%endif%} >
+                            <a href="/?type=Festival">FESTIVALS</a>
+                            <span class="text-right">
+                            
+                            <i class="fa fa-check"></i>
+                            
+                        </span>
+                        </li>
+                        <li {% if filter == "Club Event" %} class="active" {%endif%} >
+                            <a href="/?type=Club">CLUB EVENTS</a>
                             <span class="text-right"></span>
                         </li>
-                        <li>
-                            <span>CLUB EVENTS</span>
-                            <span class="text-right"></span>
-                        </li>
-                        <li class="active">
-                            <span>CONCERTS</span>
+                        <li {% if filter == "Concert" %} class="active" {%endif%} >
+                            <a href="/?type=Concert">CONCERTS</a>
                             <span class="text-right">
                                 <i class="fa fa-check"></i>
                             </span>
                         </li>
-                        <li>
-                            <span>DJ GIGS</span>
+                        <li {% if filter == "DJ Gig" %} class="active" {%endif%} >
+                            <a href="/?type=DJ">DJ GIGS</a>
                             <span class="text-right"></span>
                         </li>
-                        <li>
-                            <span>BAR EVENTS</span>
+                        <li {% if filter == "Bar Event" %} class="active" {%endif%} >
+                            <a href="/?type=Bar">BAR EVENTS</a>
                             <span class="text-right"></span>
                         </li>
                     </ul>
                 </div>
             </section>
-            <section class="col-12" id="fs_distance_body">
-                <span class="heading">
-                    Distance to you
-                </span>
-                <div class="contents">
-                    <ul>
-                        <li>
-                            <span>From 1 km to 3 km</span>
-                            <span class="text-right"></span>
-                        </li>
-                        <li class="active">
-                            <span>From 4 km to 7 km</span>
-                            <span class="text-right">
-                                <i class="fa fa-check"></i>
-                            </span>
-                        </li>
-                        <li>
-                            <span>From 8 km to 10 km</span>
-                            <span class="text-right"></span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
 
-            <section class="col-12" id="fs_rating">
-                <span class="heading">
-                    By Rating
-                </span>
-                <div class="contents">
-                    <ul>
-                        <li>
-                            <span>
-                                <i class="fa fa-star dark"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span class="text-right"></span>
-                        </li>
-                        <li>
-                            <span>
-                                <i class="fa fa-star dark"></i>
-                                <i class="fa fa-star dark"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span class="text-right"></span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
         </div>
         <div class="cards-libary col-sm-9 col-lg-10 text-center overflow-hidden">
             <div class="row gy-3 gx-3">

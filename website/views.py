@@ -1,17 +1,22 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, request
 from .models import Events
 from . import db
 import json
 from flask_login import login_required, current_user
-
+from . import db
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
 @login_required
 def home_page():
-    events = Events.query.all()
-    return render_template("index.html", events=events)
+    args = request.args
+    eventType = args.get('type')
+    if eventType is not None: 
+        events = Events.query.filter_by(type=eventType).all()
+    else:
+        events = Events.query.all()
+    return render_template("index.html", events=events, filter=eventType)
 
 
 @views.route('/Your_events')
@@ -26,7 +31,9 @@ def Create_an_event_page():
 
 @views.route('/Hosted_events')
 def Hosted_events_page():
-    return render_template("Hosted_events.html")
+    authorUsername = ''
+    events = Events.query.filter_by(author=authorUsername).all()
+    return render_template("Hosted_events.html", events=events)
 
 
 @views.route('/event/<int:event_id>/')
