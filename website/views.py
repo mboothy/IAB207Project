@@ -27,7 +27,9 @@ def Create_an_event_page():
 
 @views.route('/Hosted_events')
 def Hosted_events_page():
-    return render_template("Hosted_events.html")
+    authorUsername = ''
+    events = Events.query.filter_by(author=authorUsername).all()
+    return render_template("Hosted_events.html", events=events)
 
 
 @views.route('/event/<int:event_id>/')
