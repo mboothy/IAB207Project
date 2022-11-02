@@ -3,10 +3,9 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from os import path 
+from os import path
 
 db = SQLAlchemy()
-DB_NAME = "data.db"
 
 # create a function that creates a web application
 # a web server will run this web application
@@ -19,12 +18,10 @@ def create_app():
     app.debug = True
     app.secret_key = 'utroutoru'
     # set the app configuration data
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     # initialize db with flask app
     db.init_app(app)
-
-
 
     bootstrap = Bootstrap(app)
 
@@ -50,14 +47,13 @@ def create_app():
     from .auth import auth
     app.register_blueprint(auth, url_prefix='/')
 
-
     from .models import User
 
-    create_database(app)
+    # create_database(app)
 
     return app
 
-def create_database(app):
-    if not path.exists('website/'+ DB_NAME):
-        db.create_all(app=app)
-        print('Created Database!')
+# def create_database(app):
+#     if not path.exists('website/'+ DB_NAME):
+#         db.create_all(app=app)
+#         print('Created Database!')
