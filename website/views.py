@@ -34,6 +34,7 @@ def Create_an_event_page():
 @views.route('/Hosted_events')
 @login_required
 def Hosted_events_page():
+    print(current_user)
     authorUsername = ''
     events = Events.query.filter_by(author=authorUsername).all()
     return render_template("Hosted_events.html", events=events)
