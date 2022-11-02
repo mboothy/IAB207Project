@@ -38,15 +38,101 @@
 
 .mainsection {
     background-color: #121819;
-    width: 50vw;
-    height: 90%;
+    width: 70vw;
+    height: 1000px;
     margin: auto;
     margin-top: 20px;
-    padding-top: 10px;
+    padding: 40px;
+    padding-top: 20px;
     position: relative;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.mainsection h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: var(--piriblue);
+    font-size: 40px;
+}
+
+.innndiv {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.card {
+    background-color: var(--pirilightblack);
+    border-radius: 20px;
+    max-width: 300px;
+    padding-bottom: 0%;
+}
+
+.card h3 {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    height: 35px;
+    color: white;
+    background-color: #00cc00;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+
+.cardimg {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.cardinfo {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cardinfo h1 {
+    color: var(--piriblue);
+    font-size: 30px;
+    text-align: center;
+}
+
+.cardinfo h2 {
+    color: white;
+    font-size: 30px;
+    text-align: left;
+}
+
+.cardinfo p {
+    color: white;
+}
+
+.cardbutton {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--piriblue);
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    transition: all 300ms ease-in-out;
+}
+
+.cardbutton:hover {
+    border: solid 2px white;
+    width: 110px;
 }

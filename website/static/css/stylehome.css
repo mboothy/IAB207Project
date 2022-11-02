@@ -490,6 +490,7 @@ ul.secondheadings>li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: none;
 }
 
 .row {
@@ -506,6 +507,7 @@ ul.secondheadings>li {
 
 
 .cards-libary {
+    padding-top: 20px;
     margin-left: 0%;
     margin-right: 0%;
     padding-left: 0px;

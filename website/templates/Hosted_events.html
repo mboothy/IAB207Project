@@ -12,20 +12,21 @@
 
 {% block content %}
 <div class="mainsection">
-    {% for event in events %}
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="cardcontainer" style="background-color: white;">
-                <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top" alt="...">
-                <div class="cardbody">
-                    <h6 class="date">{{event.startDate}} – {{event.endDate}}</h6>
-                    <h5 class="card-title">{{event.name}}</h5>
-                    <p class="card-text">{{event.description}}</p>
-                    <a href="/edit/{{event.eventId}}" class="button">Edit</a>
-                </div>
-                <h7 class="ticketstatus">{{event.status}}</h7>
+    <h1>My hosted events</h1>
+    <div class="innndiv">
+        {% for event in events %}
+        <div class="card">
+            <img src="../static/imgs/carousel images/splendour.jpg" class="cardimg" alt="...">
+            <div class="cardinfo">
+                <h1>{{event.startDate}} – {{event.endDate}}</h1>
+                <h2>{{event.name}}</h2>
+                <p>{{event.description}}</p>
+                <button class="cardbutton" href="/edit/{{event.eventId}}">Edit</button>
             </div>
+            <h3>{{event.status}}</h3>
         </div>
         {% endfor %}
+    </div>
 </div>
 </div>
 
