@@ -7,7 +7,6 @@ from flask import (
 from matplotlib.pyplot import get
 from sqlalchemy import true
 from werkzeug.security import generate_password_hash, check_password_hash
-from .forms import LoginForm, RegisterForm
 from flask_login import login_user, login_required, logout_user
 from . import db
 from .models import User
@@ -38,9 +37,11 @@ def login_page():
 
     return render_template("login.html", user=current_user)
 
+
 @auth.route('/Edit_profile')
 def edit_profile_page():
     return render_template("edit_profile_page.html")
+
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up_page():
