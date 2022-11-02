@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__)
 def login():
     if request.method == 'POST':
         username = request.form.get('username')
-        password = request.form.get('password')
+        password = request.form.get('password1')
 
         user = User.query.filter_by(username=username).first()
         if user:
