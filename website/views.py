@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template
+from .models import Events
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
 def home_page():
-    return render_template("index.html")
+    events = Events.query.all()
+    return render_template("index.html", events=events)
 
 
 @views.route('/Your_events')
