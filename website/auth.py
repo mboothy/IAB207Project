@@ -1,12 +1,16 @@
 
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for,current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from . import db
 from .models import User
+import os
 
 # create a blueprint
 auth = Blueprint('auth', __name__)
+UPLOAD_FOLDER = '/path/to/the/uploads'
+
+
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -41,6 +45,10 @@ def sign_up():
         email = request.form.get('email')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
+        dob = request.form.get('Dateofbirth')
+        uploaded_file = request.files['formFile']
+
+        
 
         user = User.query.filter_by(username=username).first()
         if user:
@@ -53,9 +61,12 @@ def sign_up():
             flash('Passwords don\'t match.', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
+        elif uploaded_file.filename == '':
+            flash('upload profile pic', category='error')
         else:
+            uploaded_file.save(os.path.join("website/static/imgs/profileimgs", uploaded_file.filename))
             new_user = User(username=username,email=email, password=generate_password_hash(
-                password1, method='sha256'))
+                password1, method='sha256'),dob=dob,profileImg=uploaded_file.filename)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

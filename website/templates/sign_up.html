@@ -12,7 +12,7 @@
 
 {% block content %}
 <div class="mainsection">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <h1>Sign up</h1>
         <div class="enterfield">
             <label for="username" class="form-label">Username</label>
@@ -35,7 +35,7 @@
             </div>
             <div class="imgselectdiv">
                 <label for="formFile" class="form-label">Select a profile img</label>
-                <input class="form-control" type="file" id="formFile">
+                <input class="form-control" type="file" id="formFile" name="formFile">
             </div>
         </div>
 
