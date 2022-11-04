@@ -24,6 +24,12 @@ def Yourevents_page():
     return render_template("yourevents.html")
 
 
+@views.route('/buy_ticket')
+@login_required
+def buy_ticket_function():
+    return render_template("yourevents.html")
+
+
 @views.route('/Create_an_event')
 @login_required
 def Create_an_event_page():
@@ -36,7 +42,7 @@ def Edit_a_hosted_event(event_id):
     event = Event.query.get_or_404(event_id)
     if event.author == current_user.username:
         return render_template("edit_a_hosted_event.html", event=event, user=current_user)
-    else: 
+    else:
         return redirect(url_for('home_page'))
 
 
