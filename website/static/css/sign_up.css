@@ -38,7 +38,7 @@
 
 .mainsection {
     background-color: #121819;
-    width: 50vw;
+    width: clamp(300px, 50vw, 1000px);
     height: 90%;
     margin: auto;
     margin-top: 20px;
@@ -56,7 +56,7 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 700 !important;
     color: var(--piriblue);
-    font-size: clamp(20px, 5vw, 50px);
+    font-size: clamp(30px, 5vw, 50px);
     margin-bottom: 0%;
 }
 
@@ -74,20 +74,20 @@
     padding: 0%;
     padding-left: clamp(10px, 2vw, 50px);
     padding-right: clamp(10px, 2vw, 50px);
-    width: 50vw;
+    width: 100%;
     margin-bottom: 10px;
 }
 
 .dateofbirthdiv {
-    width: auto;
+    width: 100%;
     margin: 10px 10px 10px 0px;
-    flex: 1 1 50px;
+    flex: 1 1 100px;
 }
 
 .imgselectdiv {
     margin: 10px 0px 10px 10px;
-    width: auto;
-    flex: 1 1 50px;
+    width: 100%;
+    flex: 1 1 100px;
 }
 
 #password1 {
@@ -100,7 +100,7 @@
 
 #DOB {
     margin-top: 40px;
-    width: auto;
+    width: 100%;
 }
 
 #Dateofbirth {
@@ -136,8 +136,8 @@
 }
 
 .dateandimagediv {
-    padding-left: clamp(10px, 2vw, 50px);
-    padding-right: clamp(10px, 2vw, 50px);
+    padding-left: clamp(10px, 10vw, 50px);
+    padding-right: clamp(10px, 5vw, 50px);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
