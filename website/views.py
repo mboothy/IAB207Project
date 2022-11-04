@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify, request
+from flask import Blueprint, render_template, request, flash, jsonify, request, url_for, redirect
 from .models import Event
 from . import db
 import json
@@ -12,9 +12,9 @@ def home_page():
     args = request.args
     eventType = args.get('type')
     if eventType is not None:
-        events = Events.query.filter_by(type=eventType).all()
+        events = Event.query.filter_by(type=eventType).all()
     else:
-        events = Events.query.all()
+        events = Event.query.all()
     return render_template("index.html", events=events, filter=eventType, user=current_user)
 
 
@@ -31,9 +31,13 @@ def Create_an_event_page():
 
 
 @views.route('/edit/<int:event_id>/')
+@login_required
 def Edit_a_hosted_event(event_id):
-    event = Events.query.get_or_404(event_id)
-    return render_template("edit_a_hosted_event.html", event=event, user=current_user)
+    event = Event.query.get_or_404(event_id)
+    if event.author == current_user.username:
+        return render_template("edit_a_hosted_event.html", event=event, user=current_user)
+    else: 
+        return redirect(url_for('home_page'))
 
 
 @views.route('/Hosted_events')
@@ -41,11 +45,11 @@ def Edit_a_hosted_event(event_id):
 def Hosted_events_page():
 
     authorUsername = current_user.username
-    events = Events.query.filter_by(author=authorUsername).all()
+    events = Event.query.filter_by(author=authorUsername).all()
     return render_template("Hosted_events.html", events=events, user=current_user)
 
 
 @views.route('/event/<int:event_id>/')
 def Event_details(event_id):
-    event = Events.query.get_or_404(event_id)
+    event = Event.query.get_or_404(event_id)
     return render_template("event_details_page.html", event=event, user=current_user)

@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
 class Event(db.Model):
     __tablename__ = 'events'
     name = db.Column(db.String, unique=True)
-    id = db.Column(db.Integer, primary_key=True)
+    eventId = db.Column(db.Integer, primary_key=True)
     startDate = db.Column(db.String)
     endDate = db.Column(db.String)
     description = db.Column(db.Text)
@@ -29,7 +29,7 @@ class Event(db.Model):
     price = db.Column(db.Float)
     ticketNum = db.Column(db.Integer)
     ageRestrict = db.Column(db.Integer)
-    author = db.Column(db.Integer, db.Foreignkey(User.id))
+    author = db.Column(db.Integer, db.ForeignKey(User.id))
     tickets = db.relationship(
         'Ticket', backref='tickets_for_event', lazy=True)
 
@@ -37,7 +37,7 @@ class Event(db.Model):
 class Ticket(db.Model):
     __tablename__ = 'tickets'
     id = db.Column(db.Integer, primary_key=True)
-    owner = db.Column(db.Integer, db.Foreignkey(User.id))
+    owner = db.Column(db.Integer, db.ForeignKey(User.id))
     orignal_price = db.Column(db.Float)
-    ticket_to = db.Column(db.Integer, db.Foreignkey(Event.id))
+    ticket_to = db.Column(db.Integer, db.ForeignKey(Event.eventId))
     event_name = db.Column(db.String)
