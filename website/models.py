@@ -22,6 +22,7 @@ class Event(db.Model):
     eventId = db.Column(db.Integer, primary_key=True)
     startDate = db.Column(db.String)
     endDate = db.Column(db.String)
+    image = db.Column(db.String)
     description = db.Column(db.Text)
     location = db.Column(db.String)
     type = db.Column(db.String)
