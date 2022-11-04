@@ -19,7 +19,7 @@
             <div class="left_column">
                 <div class="nameevent">
                     <label for="exampleFormControlInput1" class="form-label">name</label>
-                    <input type="email" class="form-control" id="enternameinput" placeholder="enter name" name="name">
+                    <input type="text" class="form-control" id="enternameinput" placeholder="enter name" name="name">
                 </div>
                 <div class="dateandtime">
                     <h1>Date and Time</h1>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="mb-3" id="locationdiv">
                     <label for="exampleFormControlInput1" class="form-label">Location</label>
-                    <input type="email" class="form-control" id="locationinput" placeholder="Enter location"
+                    <input type="text" class="form-control" id="locationinput" placeholder="Enter location"
                         name="location">
                 </div>
                 <div class="ticketsdiv">
@@ -67,7 +67,7 @@
                 <h2>Event description</h2>
                 <div class="mb-3">
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"
-                        name="discription"></textarea>
+                        name="description"></textarea>
                 </div>
             </div>
             <div class="right_column">
@@ -78,14 +78,22 @@
                 <div class="catagory-list">
                     <h1>Select event catagory</h1>
                     <span class="input-group-addon">Tests:</span>
-                    <select name='tests' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
+                    <select name='type' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
                         data-live-search="true">
-                        <option value="Test1">Festivials</option>
-                        <option value="Test2">Club Events</option>
-                        <option value="Test3">Concerts</option>
-                        <option value="Test3">Dj gigs</option>
-                        <option value="Test3">Bar events</option>
+                        <option value="Festivials">Festivials</option>
+                        <option value="Club Events">Club Events</option>
+                        <option value="Concerts">Concerts</option>
+                        <option value="Dj gigs">Dj gigs</option>
+                        <option value="Bar events">Bar events</option>
                     </select>
+                    <div class="catagory-list">
+                        <h1>Select event catagory</h1>
+                        <span class="input-group-addon">Tests:</span>
+                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
+                            data-live-search="true">
+                            <option value="open">Publish now</option>
+                            <option value="unpublished">Save as draft</option>
+                        </select>
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">Search!</button>
                     </span>

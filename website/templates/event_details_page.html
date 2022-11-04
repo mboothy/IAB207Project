@@ -74,7 +74,12 @@
         </div>
     </div>
     <div class="commentsection">
-        <button type="button" class="btn" id="submitcomment">comment</button>
+        <form action="/comment" method="post" enctype="multipart/form-data">
+            <input type="text" hidden value="{{user.id}}" name="userId" id="userId">
+            <input type="text" hidden value="{{event.eventId}}" name="eventId" id="eventId">
+            <input type="text" required name="commentText" id="commentText" placeholder="Write a comment">
+            <button type="submit" class="btn" id="submitcomment">comment</button>
+        </form>
         <div class="accordion" id="accordionPanelsStayOpenExample">
             {% for comment in comments %}
             <div class="accordion-item">

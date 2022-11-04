@@ -29,6 +29,12 @@ body {
     overflow: hidden;
 }
 
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }
+
 .alert {
     border: none;
     border-radius: 10px;

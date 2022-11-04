@@ -9,4 +9,7 @@ function closealert() {
 let logout_message = document.getElementById("logout_messageid");
 function show_log_out_message() {
     logout_message.classList.toggle("show");
+    setTimeout(() =>  logout_message.classList.toggle("show"), 5000)
 }
+
+setTimeout(alert.classList.add("hidden"),5000);
