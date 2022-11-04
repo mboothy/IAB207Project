@@ -380,7 +380,6 @@ body {
 .sectionbody {
     width: auto;
     padding: 15px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
