@@ -79,7 +79,7 @@ def Create_an_event_page():
 @login_required
 def Edit_a_hosted_event(event_id):
     event = Event.query.get_or_404(event_id)
-    if event.author == current_user.username:
+    if event.author == current_user.id:
         return render_template("edit_a_hosted_event.html", event=event, user=current_user)
     else:
         return redirect(url_for('home_page'))
@@ -89,7 +89,7 @@ def Edit_a_hosted_event(event_id):
 @login_required
 def Hosted_events_page():
 
-    authorUsername = current_user.username
+    authorUsername = current_user.id
     events = Event.query.filter_by(author=authorUsername).all()
     return render_template("Hosted_events.html", events=events, user=current_user)
 
