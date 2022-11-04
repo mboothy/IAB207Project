@@ -21,7 +21,7 @@ def home_page():
 @views.route('/Your_events')
 @login_required
 def Yourevents_page():
-    return render_template("yourevents.html")
+    return render_template("yourevents.html", user=current_user)
 
 
 @views.route('/buy_ticket')
