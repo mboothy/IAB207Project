@@ -16,7 +16,7 @@
     <div class="innndiv">
         {% for event in events %}
         <div class="card">
-            <img src="/static/imgs/carousel images/splendour.jpg" class="cardimg" alt="...">
+            <img src="/static/imgs/events/{{event.image}}" class="cardimg" alt="...">
             <div class="cardinfo">
                 <h1>{{event.startDate}} – {{event.endDate}}</h1>
                 <h2>{{event.name}}</h2>
