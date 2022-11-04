@@ -14,11 +14,112 @@ body {
 }
 
 #profileicon {
-    margin-left: 40px;
-    height: 40px;
-    width: 40px;
+    margin-left: 50px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     overflow: hidden;
+}
+
+#profileicon:hover {
+    margin-left: 50px;
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.alert {
+    border: none;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    background-color: red;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    width: 40vw;
+    height: 50px;
+    overflow: hidden;
+}
+
+.alert-success {
+    border: none;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--piriblue);
+    border: solid 2px white;
+    position: absolute;
+    top: 3.5%;
+    right: 2%;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.logout_message {
+    display: none;
+}
+
+.logout_message.show {
+    border: none;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: green;
+    border: solid 2px white;
+    position: absolute;
+    top: 3.5%;
+    right: 2%;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.alert-success button {
+    display: none;
+}
+
+.alert button {
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-left: 100px;
+    margin-right: 20px;
+    width: 40px;
+    height: 30px;
+    background-color: var(--piriblue);
+    font-size: 20px;
+    transition: all 300ms ease-in-out;
+}
+
+.alert button:hover {
+    width: 42px;
+    height: 32px;
+    color: white;
+    border: solid 2px white;
+}
+
+.alert.closealert {
+    display: none;
 }
 
 .sub-menu-wrap {
