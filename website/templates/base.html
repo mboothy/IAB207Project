@@ -62,7 +62,7 @@
                                             event</a>
                                     </li>
                                     {% if user.username %}
-                                    <img src="website/static/imgs/profileimgs/{{user.profileImg}}" id="profileicon"
+                                    <img src="/static/imgs/profileimgs/{{user.profileImg}}" id="profileicon"
                                         onclick="toggleMenu()">
                                     {% else %}
                                     <img src="/static/imgs/profile2.png" id="profileicon" onclick="toggleMenu()">
@@ -72,7 +72,7 @@
                                         <div class="sub-menu">
                                             {% if user.username %}
                                             <div class="user-info">
-                                                <img src="{{user.uploaded_file}}">
+                                                <img src="/static/imgs/profileimgs/{{user.profileImg}}">
                                                 <h1>{{user.username}}</h1>
                                             </div>
                                             {% else %}
