@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, jsonify, request, url_for, redirect
-from .models import Event
+from .models import Event, Comment, Ticket, User
 from . import db
 import json
 from flask_login import login_required, current_user
@@ -58,4 +58,5 @@ def Hosted_events_page():
 @views.route('/event/<int:event_id>/')
 def Event_details(event_id):
     event = Event.query.get_or_404(event_id)
-    return render_template("event_details_page.html", event=event, user=current_user)
+    comments = Comment.query.filter_by(for_event=event_id).join(User, User.id==Comment.author).all()
+    return render_template("event_details_page.html", event=event, user=current_user, comments=comments)
