@@ -5,6 +5,7 @@ import json
 from flask_login import login_required, current_user
 from . import db
 views = Blueprint('views', __name__)
+import os
 
 
 @views.route('/')
@@ -21,7 +22,7 @@ def home_page():
 @views.route('/Your_events')
 @login_required
 def Yourevents_page():
-    return render_template("yourevents.html")
+    return render_template("yourevents.html", user=current_user)
 
 
 @views.route('/buy_ticket')
@@ -30,10 +31,35 @@ def buy_ticket_function():
     return render_template("yourevents.html")
 
 
-@views.route('/Create_an_event')
+@views.route('/Create_an_event', methods=['GET', 'POST'])
 @login_required
 def Create_an_event_page():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        startDate = request.form.get('startDate ')
+        endDate = request.form.get('endDate')
+        image = request.files['image']
+        description = request.form.get('description')
+        location = request.form.get('location')
+        type = request.form.get('type')
+        status = request.form.get('status')
+        price = request.form.get('price')
+        ticketNum = request.form.get('ticketNum')
+        ageRestrict = request.form.get('ageRestrict')
+        if len(name) < 2:
+            flash('Event name must be greater than 1 character.', category='error')
+        elif image.filename == '':
+            flash('upload profile pic', category='error')
+        else:
+            image.save(os.path.join("website/static/imgs/events", image.filename))
+            new_event = Event(name=name,startDate=startDate, endDate=endDate,image=image.filename,description=description,location=location,type=type,status=status,price=price,ticketNum=ticketNum,ageRestrict=ageRestrict)
+            db.session.add(new_event)
+            db.session.commit()
+            flash('event created!', category='success')
+            return redirect('/')
     return render_template("create_an_event.html", user=current_user)
+
+ 
 
 
 @views.route('/edit/<int:event_id>/')
