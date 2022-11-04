@@ -14,9 +14,17 @@ body {
 }
 
 #profileicon {
-    margin-left: 40px;
-    height: 40px;
-    width: 40px;
+    margin-left: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#profileicon:hover {
+    margin-left: 50px;
+    height: 52px;
+    width: 52px;
     border-radius: 50%;
     overflow: hidden;
 }

@@ -61,18 +61,23 @@
                                         <a class="nav-link" href="{{url_for('views.Create_an_event_page')}}">Create an
                                             event</a>
                                     </li>
-                                    <img src="/static/imgs/profileimgs/c-2.jpg" id="profileicon" onclick="toggleMenu()">
-
+                                    {% if user.username %}
+                                    <img src="/static/imgs/profileimgs/{{user.profileImg}}" id="profileicon"
+                                        onclick="toggleMenu()">
+                                    {% else %}
+                                    <img src="/static/imgs/profile2.png" id="profileicon" onclick="toggleMenu()">
+                                    <div class="logout_message" id="logout_messageid">Logged out successfully!</div>
+                                    {% endif %}
                                     <div class="sub-menu-wrap" id="subMenu">
                                         <div class="sub-menu">
                                             {% if user.username %}
                                             <div class="user-info">
-                                                <img src="/static/imgs/profileimgs/c-2.jpg">
+                                                <img src="/static/imgs/profileimgs/{{user.profileImg}}">
                                                 <h1>{{user.username}}</h1>
                                             </div>
                                             {% else %}
                                             <div class="user-info">
-                                                <img src="/static/imgs/profileimgs/c-2.jpg">
+                                                <img src="/static/imgs/profile2.png">
                                                 <h1>Guest</h1>
                                             </div>
                                             {% endif %}
@@ -92,7 +97,8 @@
                                                 <p>Login</p>
                                                 <span>></span>
                                             </a>
-                                            <a href="{{url_for('auth.logout')}}" class="sub-menu-link">
+                                            <a href="{{url_for('auth.logout')}}" class="sub-menu-link"
+                                                onclick="show_log_out_message()">
                                                 <img src="/static/imgs/profileimgs/logout.png" alt="">
                                                 <p>Logout</p>
                                                 <span>></span>
@@ -111,14 +117,16 @@
                 {% with messages = get_flashed_messages(with_categories=true) %} {% if
                 messages %} {% for category, message in messages %} {% if category ==
                 'error' %}
-                <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                <div class="alert alert-danger alter-dismissable fade show" role="alert" onclick="closealert()"
+                    id="alertid">
                     {{ message }}
                     <button type="button" class="close" data-dismiss="alert">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 {% else %}
-                <div class="alert alert-success alter-dismissable fade show" role="alert">
+                <div class="alert-success alert-success alter-dismissable fade show" role="alert" onclick="closealert()"
+                    id="alertid">
                     {{ message }}
                     <button type="button" class="close" data-dismiss="alert">
                         <span aria-hidden="true">&times;</span>

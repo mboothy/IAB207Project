@@ -64,7 +64,7 @@ def sign_up():
         elif uploaded_file.filename == '':
             flash('upload profile pic', category='error')
         else:
-            uploaded_file.save(os.path.join("website/static/imgs/profileimgs", uploaded_file.filename))
+            uploaded_file.save(os.path.join("website/static/imgs/profileimgs/", uploaded_file.filename))
             new_user = User(username=username,email=email, password=generate_password_hash(
                 password1, method='sha256'),dob=dob,profileImg=uploaded_file.filename)
             db.session.add(new_user)
