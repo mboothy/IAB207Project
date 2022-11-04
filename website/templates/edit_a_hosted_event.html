@@ -13,89 +13,98 @@
 {% block content %}
 <div class="mainsection">
     <div class="titlecontainer">
-        <h1 class="heading">Edit My event</h1>
+        <h1 class="heading">Edit an event</h1>
         <hr class="line" width="90%" />
     </div>
-    <div class="sectionbody">
-        <div class="left_column">
-            <div class="nameevent">
-                <label for="exampleFormControlInput1" class="form-label">name</label>
-                <input type="email" class="form-control"   value="{{event.name}}"  id="enternameinput" placeholder="enter name">
-            </div>
-            <div class="dateandtime">
-                <h1>Date and Time</h1>
-                <div class="form-floating mb-3" id="event_starts">
-                    <input type="text" class="form-control" value="{{event.startDate}}" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">event starts</label>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="sectionbody">
+            <div class="left_column">
+                <div class="nameevent">
+                    <label for="exampleFormControlInput1" class="form-label">name</label>
+                    <input type="text" class="form-control" id="enternameinput" placeholder="enter name" name="name">
                 </div>
-                <div class="form-floating 2" id="event_ends">
-                    <input type="text" class="form-control"value="{{event.endDate}}" id="floatingInput" placeholder="Password">
-                    <label for="floatingInput">event ends</label>
-                </div>
-            </div>
-            <div class="mb-3" id="locationdiv">
-                <label for="exampleFormControlInput1" value="{{event.location}}" class="form-label">Location</label>
-                <input type="email" class="form-control" id="locationinput" placeholder="Enter location">
-            </div>
-            <div class="ticketsdiv">
-                <h3>tickets</h3>
-                <div class="quanity">
-                    <div class="mb-3" id="how_many-tickets">
-                        <label for="exampleFormControlInput1" class="form-label2">How many
-                            tickets</label>
-                        <input type="number"  value="{{event.ticketNum}}" class="form-control" id="exampleFormControlInput1" placeholder="....">
+                <div class="dateandtime">
+                    <h1>Date and Time</h1>
+                    <div class="form-floating mb-3" id="event_starts">
+                        <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            name="startDate">
+                        <label for="floatingInput">event starts</label>
+                    </div>
+                    <div class="form-floating 2" id="event_ends">
+                        <input type="date" class="form-control" id="floatingInput" placeholder="Password"
+                            name="endDate">
+                        <label for="floatingInput">event ends</label>
                     </div>
                 </div>
-                <div class="ticketprice">
-                    <div class="mb-3" id="ticket_price">
-                        <label for="exampleFormControlInput1" class="form-label2">ticket price</label>
-                        <input type="number"   value="{{event.price}}"  class="form-control" id="exampleFormControlInput1" placeholder="...">
+                <div class="mb-3" id="locationdiv">
+                    <label for="exampleFormControlInput1" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="locationinput" placeholder="Enter location"
+                        name="location">
+                </div>
+                <div class="ticketsdiv">
+                    <h3>tickets</h3>
+                    <div class="quanity">
+                        <div class="mb-3" id="how_many-tickets">
+                            <label for="exampleFormControlInput1" class="form-label2">How many
+                                tickets</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="...."
+                                name="ticketNum">
+                        </div>
+                    </div>
+                    <div class="ticketprice">
+                        <div class="mb-3" id="ticket_price">
+                            <label for="exampleFormControlInput1" class="form-label2">ticket price</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="..."
+                                name="price">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-3" id="age_resitrict_div">
-                <label for="exampleFormControlInput1" class="form-label">Age Restriction</label>
-                <input type="age" class="form-control"   value="{{event.ageRestrict}}"  id="ageinput" placeholder="Enter Age Restriction">
-            </div>
-        </div>
-        <div class="middle_column">
-            <h2>Event description</h2>
-            <div class="mb-3">
-                <textarea class="form-control"  id="exampleFormControlTextarea1" rows="20">{{event.description}}</textarea>
-            </div>
-        </div>
-        <div class="right_column">
-            <h1>drag photos in here</h1>
-            <div class="photosdiv">
-                <div class="special_photo">
-                    <h2>Cover photo</h2>
-                    <img class="importimgs" src="/static/imgs/events/themet3.jpg" alt="">
-                </div>
-                <img class="importimgs" src="/static/imgs/carousel images/club2.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/carousel images/splendour.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/carousel images/ultra.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/carousel images/splendour3.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/events/omnia.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/events/themet2.jpg" alt="">
-                <img class="importimgs" src="/static/imgs/events/untold.jpg" alt="">
-            </div>
-            <div class="categorydiv">
-                <h1>Event category</h1>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        choose here
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Club</a></li>
-                        <li><a class="dropdown-item" href="#">Festival</a></li>
-                        <li><a class="dropdown-item" href="#">Concert</a></li>
-                        <li><a class="dropdown-item" href="#">Bar</a></li>
-                        <li><a class="dropdown-item" href="#">Dj</a></li>
-                    </ul>
+                <div class="mb-3" id="age_resitrict_div">
+                    <label for="exampleFormControlInput1" class="form-label">Age Restriction</label>
+                    <input type="age" class="form-control" id="ageinput" placeholder="Enter Age Restriction"
+                        name="ageRestrict">
                 </div>
             </div>
+            <div class="middle_column">
+                <h2>Event description</h2>
+                <div class="mb-3">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"
+                        name="description"></textarea>
+                </div>
+            </div>
+            <div class="right_column">
+                <div class="photosdiv">
+                    <label for="formFile" class="form-label">Select a profile img</label>
+                    <input class="form-control" type="file" id="formFile" name="image">
+                </div>
+                <div class="catagory-list">
+                    <h1>Select event catagory</h1>
+                    <span class="input-group-addon">Tests:</span>
+                    <select name='type' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
+                        data-live-search="true">
+                        <option value="Festivials">Festivials</option>
+                        <option value="Club Events">Club Events</option>
+                        <option value="Concerts">Concerts</option>
+                        <option value="Dj gigs">Dj gigs</option>
+                        <option value="Bar events">Bar events</option>
+                    </select>
+                    <div class="catagory-list">
+                        <h1>Select event catagory</h1>
+                        <span class="input-group-addon">Tests:</span>
+                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
+                            data-live-search="true">
+                            <option value="open">Publish now</option>
+                            <option value="unpublished">Save as draft</option> 
+                        </select>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Search!</button>
+                    </span>
+                </div>
+                <div class="buttondiv">
+                    <button type="submit" class="signupbutton">Sign up</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 {% endblock %}
