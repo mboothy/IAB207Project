@@ -30,6 +30,18 @@ def Yourevents_page():
 def buy_ticket_function():
     return render_template("yourevents.html")
 
+@views.route('/comment', methods=['POST'])
+@login_required
+def Create_a_comment():
+    text = request.form.get('commentText')
+    userId = request.form.get('userId')
+    eventId = request.form.get('eventId')
+    new_comment = Comment(comment=text,author=userId, for_event=eventId)
+    db.session.add(new_comment)
+    db.session.commit()
+    flash('comment created!', category='success')
+    eventPage = '/event/' + eventId
+    return redirect(eventPage)
 
 @views.route('/Create_an_event', methods=['GET', 'POST'])
 @login_required
@@ -85,5 +97,4 @@ def Hosted_events_page():
 def Event_details(event_id):
     event = Event.query.get_or_404(event_id)
     comments = db.session.query(Comment).filter_by(for_event=event_id).join(User, User.id==Comment.author).all()
-    print(comments)
     return render_template("event_details_page.html", event=event, user=current_user, comments=comments)
