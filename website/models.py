@@ -14,6 +14,8 @@ class User(db.Model, UserMixin):
         'Event', backref='event_author', lazy=True)
     tickets_to_events = db.relationship(
         'Ticket', backref='ticket_owner', lazy=True)
+    comments_on_event = db.relationship(
+        'Comment', backref='comments_posted', lazy=True)
 
 
 class Event(db.Model):
@@ -33,6 +35,8 @@ class Event(db.Model):
     author = db.Column(db.Integer, db.ForeignKey(User.id))
     tickets = db.relationship(
         'Ticket', backref='tickets_for_event', lazy=True)
+    comments = db.relationship(
+        'Comment', backref='Comments_on_event', lazy=True)
 
 
 class Ticket(db.Model):
@@ -42,3 +46,11 @@ class Ticket(db.Model):
     orignal_price = db.Column(db.Float)
     ticket_to = db.Column(db.Integer, db.ForeignKey(Event.eventId))
     event_name = db.Column(db.String)
+
+
+class Comment(db.Model):
+    __tablename__ = 'Comments'
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.Text)
+    for_event = db.Column(db.Integer, db.ForeignKey(Event.eventId))
+    author = db.Column(db.Integer, db.ForeignKey(User.id))
