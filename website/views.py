@@ -90,11 +90,57 @@ def Create_an_event_page():
     return render_template("create_an_event.html", user=current_user)
 
 
-@views.route('/edit/<int:event_id>/')
+@views.route('/edit/<int:event_id>/', methods=['GET', 'POST'])
 @login_required
 def Edit_a_hosted_event(event_id):
     event = Event.query.get_or_404(event_id)
     if event.author == current_user.id:
+        if request.method == 'POST':
+            name = request.form.get('name')
+            startDate = request.form.get('startDate')
+            endDate = request.form.get('endDate')
+            image = request.files['image']
+            description = request.form.get('description')
+            location = request.form.get('location')
+            type = request.form.get('type')
+            status = request.form.get('status')
+            price = request.form.get('price')
+            ticketNum = request.form.get('ticketNum')
+            ageRestrict = request.form.get('ageRestrict')
+            if ticketNum == 0:
+                status = "sold out"
+            if name != "":
+                name = event.name
+            if startDate != "":
+                event.startDate = startDate
+            if endDate != "":
+                event.endDat = endDate 
+            if description != "":
+                event.description = description 
+            if location != "":
+                event.location = location 
+            if type != "":
+                event.type = type
+            if status != "":
+                event.status = status 
+            if price != "":
+                event.price = price
+            if ticketNum != "":
+                event.ticketNum = ticketNum 
+            if  ageRestrict != "":
+                event.ageRestrict = ageRestrict 
+            if image.filename == '':
+                
+                db.session.commit()
+                flash('event edited!', category='success')
+                return redirect('/')
+            else:
+                event.image = image.filename
+                db.session.commit()
+                image.save(os.path.join(
+                    "website/static/imgs/events", image.filename))
+                flash('event edited!', category='success')
+                return redirect('/')
         return render_template("edit_a_hosted_event.html", event=event, user=current_user)
     else:
         return redirect(url_for('home_page'))
@@ -116,6 +162,3 @@ def Event_details(event_id):
         for_event=event_id).join(User, User.id == Comment.author).all()
     print(comments)
     return render_template("event_details_page.html", event=event, user=current_user, comments=comments)
-
-
-h
