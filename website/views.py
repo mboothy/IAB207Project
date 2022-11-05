@@ -116,3 +116,6 @@ def Event_details(event_id):
         for_event=event_id).join(User, User.id == Comment.author).all()
     print(comments)
     return render_template("event_details_page.html", event=event, user=current_user, comments=comments)
+
+
+h
