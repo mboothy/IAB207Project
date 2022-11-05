@@ -21,25 +21,26 @@
             <div class="left_column">
                 <div class="nameevent">
                     <label for="exampleFormControlInput1" class="form-label">name</label>
-                    <input type="text"  value="{{event.name}}" class="form-control" id="enternameinput" placeholder="enter name" name="name">
+                    <input type="text" value="{{event.name}}" class="form-control" id="enternameinput"
+                        placeholder="enter name" name="name">
                 </div>
                 <div class="dateandtime">
                     <h1>Date and Time</h1>
                     <div class="form-floating mb-3" id="event_starts">
-                        <input type="date"  value="{{event.startDate}}" class="form-control" id="floatingInput" placeholder="name@example.com"
-                            name="startDate">
+                        <input type="date" value="{{event.startDate}}" class="form-control" id="floatingInput"
+                            placeholder="name@example.com" name="startDate">
                         <label for="floatingInput">event starts</label>
                     </div>
                     <div class="form-floating 2" id="event_ends">
-                        <input type="date" value="{{event.endDate}}" class="form-control" id="floatingInput" placeholder="Password"
-                            name="endDate">
+                        <input type="date" value="{{event.endDate}}" class="form-control" id="floatingInput"
+                            placeholder="Password" name="endDate">
                         <label for="floatingInput">event ends</label>
                     </div>
                 </div>
                 <div class="mb-3" id="locationdiv">
                     <label for="exampleFormControlInput1" class="form-label">Location</label>
-                    <input type="text" value="{{event.location}}" class="form-control" id="locationinput" placeholder="Enter location"
-                        name="location">
+                    <input type="text" value="{{event.location}}" class="form-control" id="locationinput"
+                        placeholder="Enter location" name="location">
                 </div>
                 <div class="ticketsdiv">
                     <h3>tickets</h3>
@@ -47,22 +48,22 @@
                         <div class="mb-3" id="how_many-tickets">
                             <label for="exampleFormControlInput1" class="form-label2">How many
                                 tickets</label>
-                            <input type="number"  value="{{event.ticketNum}}" class="form-control" id="exampleFormControlInput1" placeholder="...."
-                                name="ticketNum">
+                            <input type="number" value="{{event.ticketNum}}" class="form-control"
+                                id="exampleFormControlInput1" placeholder="...." name="ticketNum">
                         </div>
                     </div>
                     <div class="ticketprice">
                         <div class="mb-3" id="ticket_price">
                             <label for="exampleFormControlInput1" class="form-label2">ticket price</label>
-                            <input type="number" value="{{event.price}}"  class="form-control" id="exampleFormControlInput1" placeholder="..."
-                                name="price">
+                            <input type="number" value="{{event.price}}" class="form-control"
+                                id="exampleFormControlInput1" placeholder="..." name="price">
                         </div>
                     </div>
                 </div>
                 <div class="mb-3" id="age_resitrict_div">
                     <label for="exampleFormControlInput1" class="form-label">Age Restriction</label>
-                    <input type="age" value="{{event.ageRestrict}}"  class="form-control" id="ageinput" placeholder="Enter Age Restriction"
-                        name="ageRestrict">
+                    <input type="age" value="{{event.ageRestrict}}" class="form-control" id="ageinput"
+                        placeholder="Enter Age Restriction" name="ageRestrict">
                 </div>
             </div>
             <div class="middle_column">
@@ -78,7 +79,7 @@
                     <input class="form-control" type="file" id="formFile" name="image">
                 </div>
                 <div class="catagory-list">
-                    <h1>Select event catagory</h1>
+                    <h1 id="title">Select event catagory</h1>
                     <span class="input-group-addon">Tests:</span>
                     <select name='type' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
                         data-live-search="true">
@@ -89,23 +90,23 @@
                         <option value="Bar events">Bar events</option>
                     </select>
                     <div class="catagory-list">
-                        <h1>Select event catagory</h1>
+                        <h1 id="title">Select event catagory</h1>
                         <span class="input-group-addon">Tests:</span>
-                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
-                            data-live-search="true">
+                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple
+                            data-max-options="2" data-live-search="true">
                             <option value="open">Publish now</option>
-                            <option value="unpublished">Save as draft</option> 
+                            <option value="unpublished">Save as draft</option>
                             <option value="canceled">canceled</option>
                         </select>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Search!</button>
-                    </span>
-                </div>
-                <div class="buttondiv">
-                    <button type="submit" class="signupbutton">Update</button>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Search!</button>
+                        </span>
+                    </div>
+                    <div class="buttondiv">
+                        <button type="submit" class="signupbutton">Update</button>
+                    </div>
                 </div>
             </div>
-        </div>
     </form>
 </div>
 {% endblock %}

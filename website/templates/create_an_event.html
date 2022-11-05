@@ -76,8 +76,7 @@
                     <input class="form-control" type="file" id="formFile" name="image">
                 </div>
                 <div class="catagory-list">
-                    <h1>Select event catagory</h1>
-                    <span class="input-group-addon">Tests:</span>
+                    <h1 id="title">Select event catagory</h1>
                     <select name='type' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
                         data-live-search="true">
                         <option value="Festival">Festivals</option>
@@ -87,22 +86,21 @@
                         <option value="Bar">Bar events</option>
                     </select>
                     <div class="catagory-list">
-                        <h1>Select event category</h1>
-                        <span class="input-group-addon">Tests:</span>
-                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
-                            data-live-search="true">
+                        <h1 id="title">release or draft</h1>
+                        <select name='status' class="selectpicker show-menu-arrow form-control" multiple
+                            data-max-options="2" data-live-search="true">
                             <option value="open">Publish now</option>
                             <option value="unpublished">Save as draft</option>
                         </select>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Search!</button>
-                    </span>
-                </div>
-                <div class="buttondiv">
-                    <button type="submit" class="signupbutton">Sign up</button>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Search!</button>
+                        </span>
+                    </div>
+                    <div class="buttondiv">
+                        <button type="submit" class="signupbutton">Submit</button>
+                    </div>
                 </div>
             </div>
-        </div>
     </form>
 </div>
 {% endblock %}

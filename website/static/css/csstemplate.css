@@ -33,7 +33,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
-  }
+}
 
 .alert {
     border: none;
@@ -132,6 +132,7 @@ body {
     position: absolute;
     top: 100%;
     right: 1%;
+    z-index: 10;
     width: clamp(200px, 20vw, 370px);
     max-height: 0px;
     overflow: hidden;
