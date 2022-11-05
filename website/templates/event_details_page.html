@@ -48,18 +48,15 @@
             <div class="location_status">
                 <h9 class="eventtype"><span>event type:</span> {{event.type}}</h9>
                 <h10 class="eventstatus">{{event.status}}</h10>
-            </div>
-            <form action="/buyticket/{{event.eventId}}" method="POST" enctype="multipart/form-data">
-                <div class="pricediv">
+            </div><div class="pricediv">
                     <h9 class="price">${{event.price}} aud</h9>
                     <input type="text" hidden value="{{event.eventId}}" name="eventId" id="eventId">
-                    <button type="submit" class="pricebutton">Buy ticket</button>
+                    <a href="/buyticket/{{event.eventId}}" class="pricebutton">Buy ticket</a>
                     <h1>{{event.startDate}}
                     </h1>
                     <h3>{{event.endDate}}
                     </h3>
                 </div>
-            </form>
             <div class="textandmap">
                 <p class="event-text">{{event.description}}
                 </p>

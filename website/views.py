@@ -25,24 +25,21 @@ def Yourevents_page():
     return render_template("yourevents.html", user=current_user)
 
 
-@views.route('/buyticket/<int:event_id>/', methods=['GET', 'POST'])
+@views.route('/buyticket/<int:event_id>/', methods=['GET'])
 @login_required
 def buy_ticket_function(event_id):
-    if request.method == 'POST':
-        owner = current_user.id
-        event = Event.query.get_or_404(event_id)
-        orignal_price = event.price
-        ticket_to = event.eventId
-        event_name = event.name
-        event.ticketNum = event.ticketNum - 1
-        new_ticket = Ticket(owner=owner, orignal_price=orignal_price,
-                            ticket_to=ticket_to, event_name=event_name)
-        db.session.add(new_ticket)
-        db.session.commit()
-        flash('ticket bought!', category='success')
-        return redirect("/Your_events")
-    return render_template("event_details_page.html", user=current_user)
-
+    owner = current_user.id
+    event = Event.query.get_or_404(event_id)
+    orignal_price = event.price
+    ticket_to = event.eventId
+    event_name = event.name
+    event.ticketNum = event.ticketNum - 1
+    new_ticket = Ticket(owner=owner, orignal_price=orignal_price,
+                        ticket_to=ticket_to, event_name=event_name)
+    db.session.add(new_ticket)
+    db.session.commit()
+    flash('ticket bought!', category='success')
+    return redirect("/Your_events")
 
 @views.route('/comment', methods=['POST'])
 @login_required
