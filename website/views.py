@@ -13,16 +13,17 @@ def home_page():
     args = request.args
     eventType = args.get('type')
     if eventType is not None:
-        events = Event.query.filter_by(type=eventType).all()
+        events = Event.query.filter_by(type=eventType).filter(Event.status!="unpublished").all()
     else:
-        events = Event.query.all()
+        events = Event.query.filter(Event.status!="unpublished").all()
     return render_template("index.html", events=events, filter=eventType, user=current_user)
 
 
 @views.route('/Your_events')
 @login_required
 def Yourevents_page():
-    return render_template("yourevents.html", user=current_user)
+    tickets = db.session.query(Ticket).filter_by(owner=current_user.id).join(Event, Event.eventId == Ticket.ticket_to).all()
+    return render_template("yourevents.html", tickets=tickets, user=current_user)
 
 
 @views.route('/buyticket/<int:event_id>/', methods=['GET'])
@@ -155,7 +156,5 @@ def Hosted_events_page():
 @views.route('/event/<int:event_id>/')
 def Event_details(event_id):
     event = Event.query.get_or_404(event_id)
-    comments = db.session.query(Comment).filter_by(
-        for_event=event_id).join(User, User.id == Comment.author).all()
-    print(comments)
+    comments = db.session.query(Comment).filter_by(for_event=event_id).join(User, User.id == Comment.author).all()
     return render_template("event_details_page.html", event=event, user=current_user, comments=comments)

@@ -14,205 +14,26 @@
         <h10 class="cardstitle">Your events</h10>
         <hr class="similar-events-line" width="90%" />
         <div class="row gy-3 gx-3">
-            <h1 class="calendertitle">This week</h1>
+            {% for ticket in tickets %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="cardcontainer">
-                    <img src="../static/imgs/carousel images/splendour.jpg" class="card-img-top" alt="...">
+                    <img src="/static/imgs/events/{{ticket.tickets_for_event.image}}" class="card-img-top" alt="...">
                     <div class="cardbody">
                         <div class="date">
                             <div>
-                                <h1 class="month">July</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">22</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Friday to sunday</h1>
+                                <h1 class="day">{{ticket.tickets_for_event.startDate}}</h1>
                             </div>
                         </div>
                         <div class="vl"></div>
                         <div class="detailsection">
-                            <h1 class="eventname"><strong>splendour in the grass</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>22/05/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10625780</span></h1>
+                            <h1 class="eventname"><strong>{{ticket.tickets_for_event.name}}</strong></h1>
+                            <h1 class="bookeddate">Booked date: <span>{{ticket.tickets_for_event.startDate}}</span></h1>
+                            <h1 class="booking-id">Booking id: <span>{{ticket.id}}</span></h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/carousel images/ultra.jpg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">Mar</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">24</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Thursday to Friday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>Ultra 2022</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>30/02/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10623780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/untold.jpg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">Aug</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">4</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Thursday to Saturday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>Untold 2022</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>05/01/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>20625780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row gy-3 gx-3">
-            <h1 class="calendertitle">This month</h1>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/tommorland.jpg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">July</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">15</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Friday to sunday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>Tommorland 2022</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>15/03/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10395780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/kickons2.jpeg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">Sep</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">11</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Sunday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>Kick ons CLUB</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>25/06/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>18625780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row gy-3 gx-3">
-            <h1 class="calendertitle">This year</h1>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/omnia.jpg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">July</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">22</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Friday to sunday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>splendour in the grass</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>22/05/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10625780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/prohabition.png" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">July</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">22</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Friday to sunday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>splendour in the grass</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>22/05/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10625780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="cardcontainer">
-                    <img src="../static/imgs/events/themet3.jpg" class="card-img-top" alt="...">
-                    <div class="cardbody">
-                        <div class="date">
-                            <div>
-                                <h1 class="month">July</h1>
-                            </div>
-                            <div>
-                                <h1 class="day">22</h1>
-                            </div>
-                            <div>
-                                <h1 class="whatdays">Friday to sunday</h1>
-                            </div>
-                        </div>
-                        <div class="vl"></div>
-                        <div class="detailsection">
-                            <h1 class="eventname"><strong>splendour in the grass</strong></h1>
-                            <h1 class="bookeddate">Booked date: <span>22/05/2022</span></h1>
-                            <h1 class="booking-id">Booking id: <span>10625780</span></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
         </div>
     </div>
 </div>
