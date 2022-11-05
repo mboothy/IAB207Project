@@ -51,7 +51,7 @@
             </div><div class="pricediv">
                     <h9 class="price">${{event.price}} aud</h9>
                     <input type="text" hidden value="{{event.eventId}}" name="eventId" id="eventId">
-                    <a href="/buyticket/{{event.eventId}}" class="pricebutton">Buy ticket</a>
+                    {%if event.status == "open" %}<a href="/buyticket/{{event.eventId}}" class="pricebutton">Buy ticket</a> {%endif%}
                     <h1>{{event.startDate}}
                     </h1>
                     <h3>{{event.endDate}}

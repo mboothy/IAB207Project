@@ -94,9 +94,9 @@
                         <span class="input-group-addon">Tests:</span>
                         <select name='status' class="selectpicker show-menu-arrow form-control" multiple
                             data-max-options="2" data-live-search="true">
-                            <option  {%if event.type == "open" %} selected {%endif%}  value="open">Publish now</option>
-                            <option {%if event.type == "unpublished" %} selected {%endif%}  value="unpublished">Save as draft</option>
-                            <option {%if event.type == "canceled" %} selected {%endif%}  value="canceled">canceled</option>
+                            <option  {%if event.status == "open" %} selected {%endif%}  value="open">Publish now</option>
+                            <option {%if event.status == "unpublished" %} selected {%endif%}  value="unpublished">Save as draft</option>
+                            <option {%if event.status == "canceled" %} selected {%endif%}  value="canceled">canceled</option>
                         </select>
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">Search!</button>
