@@ -527,7 +527,7 @@ ul.secondheadings>li {
     margin-right: 0%;
     padding-left: 0px;
     padding-right: 0px;
-
+    height: 800px;
 }
 
 .fs_app {
@@ -549,6 +549,7 @@ ul.secondheadings>li {
         margin-right: 0%;
         padding-left: 0px;
         padding-right: 0px;
+        height: 800px;
     }
 
     .row {
@@ -563,6 +564,10 @@ ul.secondheadings>li {
 
     }
 
+}
+
+.container-fluid-events {
+    height: 1000px;
 }
 
 #fs_app>section:not(#fs_header_bar) {

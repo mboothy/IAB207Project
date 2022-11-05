@@ -64,7 +64,7 @@
 
                             </span>
                         </li>
-                        <li {% if filter=="Club Event" %} class="active" {%endif%}>
+                        <li {% if filter=="Club" %} class="active" {%endif%}>
                             <a href="/?type=Club">CLUB EVENTS</a>
                             <span class="text-right"></span>
                         </li>
@@ -74,11 +74,11 @@
                                 <i class="fa fa-check"></i>
                             </span>
                         </li>
-                        <li {% if filter=="DJ Gig" %} class="active" {%endif%}>
+                        <li {% if filter=="DJ" %} class="active" {%endif%}>
                             <a href="/?type=DJ">DJ GIGS</a>
                             <span class="text-right"></span>
                         </li>
-                        <li {% if filter=="Bar Event" %} class="active" {%endif%}>
+                        <li {% if filter=="Bar" %} class="active" {%endif%}>
                             <a href="/?type=Bar">BAR EVENTS</a>
                             <span class="text-right"></span>
                         </li>
@@ -99,7 +99,7 @@
                             <h6 class="date">{{event.startDate}} – {{event.endDate}}</h6>
                             <h5 class="card-title">{{event.name}}</h5>
                             <p class="card-text">{{event.description}}</p>
-                            <a href="/event/{{event.eventId}}" class="button">BUY TICKETS</a>
+                            {%if event.status == "open" %}<a href="/event/{{event.eventId}}" class="button">BUY TICKETS</a> {%endif%}
                         </div>
                         <h7 class="ticketstatus">{{event.status}}</h7>
                     </div>
