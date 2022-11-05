@@ -105,6 +105,7 @@ def Edit_a_hosted_event(event_id):
             price = request.form.get('price')
             ticketNum = request.form.get('ticketNum')
             ageRestrict = request.form.get('ageRestrict')
+            
             if ticketNum == 0:
                 status = "sold out"
             if name != "":
@@ -117,10 +118,10 @@ def Edit_a_hosted_event(event_id):
                 event.description = description 
             if location != "":
                 event.location = location 
-            if type != "":
+            if type is not None:
                 event.type = type
-            if status != "":
-                event.status = status 
+            if status is not None:
+                event.status = status
             if price != "":
                 event.price = price
             if ticketNum != "":
