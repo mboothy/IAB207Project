@@ -16,7 +16,7 @@
         <h1 class="heading">Edit an event</h1>
         <hr class="line" width="90%" />
     </div>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" action="/editEvent/{{event.id}}" enctype="multipart/form-data">
         <div class="sectionbody">
             <div class="left_column">
                 <div class="nameevent">
@@ -79,24 +79,24 @@
                     <input class="form-control" type="file" id="formFile" name="image">
                 </div>
                 <div class="catagory-list">
-                    <h1 id="title">Select event catagory</h1>
+                    <h1 id="title">Select event category</h1>
                     <span class="input-group-addon">Tests:</span>
                     <select name='type' class="selectpicker show-menu-arrow form-control" multiple data-max-options="2"
                         data-live-search="true">
-                        <option value="Festivials">Festivials</option>
-                        <option value="Club Events">Club Events</option>
-                        <option value="Concerts">Concerts</option>
-                        <option value="Dj gigs">Dj gigs</option>
-                        <option value="Bar events">Bar events</option>
+                        <option {%if event.type == "Festival" %} selected {%endif%} value="Festival">Festivals</option>
+                        <option {%if event.type == "Club" %} selected {%endif%}  value="Club">Club Events</option>
+                        <option {%if event.type == "Concert" %} selected {%endif%}  value="Concert">Concerts</option>
+                        <option {%if event.type == "DJ" %} selected {%endif%}  value="DJ">Dj gigs</option>
+                        <option {%if event.type == "Bar" %} selected {%endif%}  value="Bar">Bar events</option>
                     </select>
                     <div class="catagory-list">
-                        <h1 id="title">Select event catagory</h1>
+                        <h1 id="title">Select event category</h1>
                         <span class="input-group-addon">Tests:</span>
                         <select name='status' class="selectpicker show-menu-arrow form-control" multiple
                             data-max-options="2" data-live-search="true">
-                            <option value="open">Publish now</option>
-                            <option value="unpublished">Save as draft</option>
-                            <option value="canceled">canceled</option>
+                            <option  {%if event.type == "open" %} selected {%endif%}  value="open">Publish now</option>
+                            <option {%if event.type == "unpublished" %} selected {%endif%}  value="unpublished">Save as draft</option>
+                            <option {%if event.type == "canceled" %} selected {%endif%}  value="canceled">canceled</option>
                         </select>
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">Search!</button>
