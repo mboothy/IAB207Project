@@ -25,10 +25,24 @@ def Yourevents_page():
     return render_template("yourevents.html", user=current_user)
 
 
-@views.route('/buy_ticket')
+@views.route('/buyticket/<int:event_id>/', methods=['GET', 'POST'])
 @login_required
-def buy_ticket_function():
-    return render_template("yourevents.html")
+def buy_ticket_function(event_id):
+    if request.method == 'POST':
+        owner = current_user.id
+        event = Event.query.get_or_404(event_id)
+        orignal_price = event.price
+        ticket_to = event.eventId
+        event_name = event.name
+        event.ticketNum = event.ticketNum - 1
+        new_ticket = Ticket(owner=owner, orignal_price=orignal_price,
+                            ticket_to=ticket_to, event_name=event_name)
+        db.session.add(new_ticket)
+        db.session.commit()
+        flash('ticket bought!', category='success')
+        return redirect("/Your_events")
+    return render_template("event_details_page.html", user=current_user)
+
 
 @views.route('/comment', methods=['POST'])
 @login_required
@@ -36,12 +50,13 @@ def Create_a_comment():
     text = request.form.get('commentText')
     userId = request.form.get('userId')
     eventId = request.form.get('eventId')
-    new_comment = Comment(comment=text,author=userId, for_event=eventId)
+    new_comment = Comment(comment=text, author=userId, for_event=eventId)
     db.session.add(new_comment)
     db.session.commit()
     flash('comment created!', category='success')
     eventPage = '/event/' + eventId
     return redirect(eventPage)
+
 
 @views.route('/Create_an_event', methods=['GET', 'POST'])
 @login_required
@@ -58,7 +73,7 @@ def Create_an_event_page():
         price = request.form.get('price')
         ticketNum = request.form.get('ticketNum')
         ageRestrict = request.form.get('ageRestrict')
-        author=current_user.id
+        author = current_user.id
         if ticketNum == 0:
             status = "sold out"
         if image.filename == '':
@@ -67,7 +82,7 @@ def Create_an_event_page():
             image.save(os.path.join(
                 "website/static/imgs/events", image.filename))
             new_event = Event(name=name, startDate=startDate, endDate=endDate, image=image.filename, description=description,
-                              location=location, type=type, status=status, price=price, ticketNum=ticketNum, ageRestrict=ageRestrict,author=author)
+                              location=location, type=type, status=status, price=price, ticketNum=ticketNum, ageRestrict=ageRestrict, author=author)
             db.session.add(new_event)
             db.session.commit()
             flash('event created!', category='success')

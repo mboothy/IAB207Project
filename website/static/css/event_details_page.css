@@ -553,13 +553,13 @@ h6 {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: clamp(5px, 1vw, 10px);
+    font-size: clamp(5px, 1vw, 15px);
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
 
-    width: 2.5vw;
-    height: 20px;
+    width: 5vw;
+    height: 30px;
     margin: 10px 10px 10px 5px;
 
     display: flex;
@@ -600,11 +600,8 @@ h6 {
 }
 
 .pricebutton:hover {
-    background-color: #03b3df;
-    color: white;
     font-size: 1.3vw;
-    width: 2.7vw;
-    height: 20px;
+    border: solid 2px var(--piriblue);
 }
 
 .commentsection {
