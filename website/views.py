@@ -72,7 +72,7 @@ def Create_an_event_page():
         ticketNum = request.form.get('ticketNum')
         ageRestrict = request.form.get('ageRestrict')
         author = current_user.id
-        if ticketNum == 0:
+        if ticketNum == "0":
             status = "sold out"
         if image.filename == '':
             flash('upload profile pic', category='error')
@@ -106,8 +106,7 @@ def Edit_a_hosted_event(event_id):
             ticketNum = request.form.get('ticketNum')
             ageRestrict = request.form.get('ageRestrict')
             
-            if ticketNum == 0:
-                status = "sold out"
+            
             if name != "":
                 name = event.name
             if startDate != "":
@@ -128,6 +127,8 @@ def Edit_a_hosted_event(event_id):
                 event.ticketNum = ticketNum 
             if  ageRestrict != "":
                 event.ageRestrict = ageRestrict 
+            if ticketNum == "0":
+                event.status = "sold out"
             if image.filename == '':
                 
                 db.session.commit()
