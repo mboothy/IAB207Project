@@ -21,24 +21,24 @@
             <div class="left_column">
                 <div class="nameevent">
                     <label for="exampleFormControlInput1" class="form-label">name</label>
-                    <input type="text" class="form-control" id="enternameinput" placeholder="enter name" name="name">
+                    <input type="text"  value="{{event.name}}" class="form-control" id="enternameinput" placeholder="enter name" name="name">
                 </div>
                 <div class="dateandtime">
                     <h1>Date and Time</h1>
                     <div class="form-floating mb-3" id="event_starts">
-                        <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        <input type="date"  value="{{event.startDate}}" class="form-control" id="floatingInput" placeholder="name@example.com"
                             name="startDate">
                         <label for="floatingInput">event starts</label>
                     </div>
                     <div class="form-floating 2" id="event_ends">
-                        <input type="date" class="form-control" id="floatingInput" placeholder="Password"
+                        <input type="date" value="{{event.endDate}}" class="form-control" id="floatingInput" placeholder="Password"
                             name="endDate">
                         <label for="floatingInput">event ends</label>
                     </div>
                 </div>
                 <div class="mb-3" id="locationdiv">
                     <label for="exampleFormControlInput1" class="form-label">Location</label>
-                    <input type="text" class="form-control" id="locationinput" placeholder="Enter location"
+                    <input type="text" value="{{event.location}}" class="form-control" id="locationinput" placeholder="Enter location"
                         name="location">
                 </div>
                 <div class="ticketsdiv">
@@ -47,21 +47,21 @@
                         <div class="mb-3" id="how_many-tickets">
                             <label for="exampleFormControlInput1" class="form-label2">How many
                                 tickets</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="...."
+                            <input type="number"  value="{{event.ticketNum}}" class="form-control" id="exampleFormControlInput1" placeholder="...."
                                 name="ticketNum">
                         </div>
                     </div>
                     <div class="ticketprice">
                         <div class="mb-3" id="ticket_price">
                             <label for="exampleFormControlInput1" class="form-label2">ticket price</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="..."
+                            <input type="number" value="{{event.price}}"  class="form-control" id="exampleFormControlInput1" placeholder="..."
                                 name="price">
                         </div>
                     </div>
                 </div>
                 <div class="mb-3" id="age_resitrict_div">
                     <label for="exampleFormControlInput1" class="form-label">Age Restriction</label>
-                    <input type="age" class="form-control" id="ageinput" placeholder="Enter Age Restriction"
+                    <input type="age" value="{{event.ageRestrict}}"  class="form-control" id="ageinput" placeholder="Enter Age Restriction"
                         name="ageRestrict">
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <h2>Event description</h2>
                 <div class="mb-3">
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"
-                        name="description"></textarea>
+                        name="description">{{event.description}}</textarea>
                 </div>
             </div>
             <div class="right_column">
@@ -95,13 +95,14 @@
                             data-live-search="true">
                             <option value="open">Publish now</option>
                             <option value="unpublished">Save as draft</option> 
+                            <option value="canceled">canceled</option>
                         </select>
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">Search!</button>
                     </span>
                 </div>
                 <div class="buttondiv">
-                    <button type="submit" class="signupbutton">Sign up</button>
+                    <button type="submit" class="signupbutton">Update</button>
                 </div>
             </div>
         </div>
