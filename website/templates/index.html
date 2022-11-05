@@ -50,70 +50,44 @@
                     </div>
                 </div>
             </section>
-            <section class="col-12 " id="fs_price_body">
-                <div>
-                    <span class="heading">
-                        By Price
-                    </span>
-                    <div class="row  " id="pricing-buttons">
-                        <div class="col-4">
-                            <button class="btn" type="button">&dollar;</button>
-                        </div>
-                        <div class="col-4 active">
-                            <button class="btn" type="button">&dollar;&dollar;</button>
-                        </div>
-                        <div class="col-4">
-                            <button class="btn" type="button">&dollar;&dollar;&dollar;</button>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="line1"></div>
-                    <div>
-                        <ul>
-                            <li>$25</li>
-                            <li>$500</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
             <section class="col-12" id="fs_time_body">
                 <span class="heading">
                     Event type <a href="/"> Clear</a>
                 </span>
                 <div class="contents">
                     <ul>
-                        <li {% if filter == "Festival" %} class="active" {%endif%} >
+                        <li {% if filter=="Festival" %} class="active" {%endif%}>
                             <a href="/?type=Festival">FESTIVALS</a>
                             <span class="text-right">
-                            
-                            <i class="fa fa-check"></i>
-                            
-                        </span>
+
+                                <i class="fa fa-check"></i>
+
+                            </span>
                         </li>
-                        <li {% if filter == "Club Event" %} class="active" {%endif%} >
+                        <li {% if filter=="Club Event" %} class="active" {%endif%}>
                             <a href="/?type=Club">CLUB EVENTS</a>
                             <span class="text-right"></span>
                         </li>
-                        <li {% if filter == "Concert" %} class="active" {%endif%} >
+                        <li {% if filter=="Concert" %} class="active" {%endif%}>
                             <a href="/?type=Concert">CONCERTS</a>
                             <span class="text-right">
                                 <i class="fa fa-check"></i>
                             </span>
                         </li>
-                        <li {% if filter == "DJ Gig" %} class="active" {%endif%} >
+                        <li {% if filter=="DJ Gig" %} class="active" {%endif%}>
                             <a href="/?type=DJ">DJ GIGS</a>
                             <span class="text-right"></span>
                         </li>
-                        <li {% if filter == "Bar Event" %} class="active" {%endif%} >
+                        <li {% if filter=="Bar Event" %} class="active" {%endif%}>
                             <a href="/?type=Bar">BAR EVENTS</a>
                             <span class="text-right"></span>
                         </li>
                     </ul>
                 </div>
             </section>
-            
 
-            
+
+
         </div>
         <div class="cards-libary col-sm-9 col-lg-10 text-center overflow-hidden">
             <div class="row gy-3 gx-3">
